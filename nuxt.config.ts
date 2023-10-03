@@ -5,6 +5,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    'nuxt-icon',
+    'nuxt-headlessui',
   ],
   i18n: {
     vueI18n: 'plugins/locales/i18n.js',
