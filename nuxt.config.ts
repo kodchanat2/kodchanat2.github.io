@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       { code: 'th', iso: 'th-TH', file: 'th.json', name: 'ไทย' }
     ],
     defaultLocale: 'en',
+    strategy: "no_prefix",
     lazy: true,
     langDir: 'plugins/locales/',
     detectBrowserLanguage: {
