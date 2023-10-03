@@ -1,3 +1,9 @@
 {
-    "title": "Hello world"
+    "title_short": "JOHN V.",
+    "title": "Hello world",
+
+    "theme": "Theme",
+    "theme_light": "light",
+    "theme_dark": "dark",
+    "language": "Language"
 }

@@ -5,7 +5,5 @@
   </template>
   
   <script setup>
-  const { locale, locales: allLocales, setLocale } = useI18n()
   
-  const locales = computed(() => allLocales.value.filter((l) => l !== locale.value))
   </script>

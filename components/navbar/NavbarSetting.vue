@@ -1,48 +1,63 @@
 <template>
-  <HPopover v-slot="{ open }" class="relative"
-  @mouseover="setHover(true)" @mouseleave="setHover(false)"
-  >
-    <HPopoverButton :class="open ? '' : 'text-opacity-90'"
-      class="group inline-flex items-center rounded-full cursor-pointer p-2 transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 hover:shadow-xl"
-      >
-      <Icon name="ic:baseline-settings" aria-hidden="true"
-        class="w-8 h-8 transition-transform duration-500" :class="open||hover ? 'scale-110 rotate-90' : 'scale-100 rotate-0'" />
+  <HPopover class="relative" @mouseover="setHover(true)" @mouseleave="setHover(false)">
+    <HPopoverButton
+      class="group inline-flex items-center rounded-full cursor-pointer p-2 transition-colors focus:outline-none"
+      :class="hover ? 'bg-black/10 dark:bg-white/10':''">
+      <Icon name="ic:baseline-settings" aria-hidden="true" class="w-8 h-8 transition-transform duration-500"
+        :class="hover ? 'scale-110 rotate-90' : 'scale-100 rotate-0'" />
     </HPopoverButton>
 
     <transition enter-active-class="transition duration-200 ease-out" enter-from-class="translate-y-1 opacity-0"
       enter-to-class="translate-y-0 opacity-100" leave-active-class="transition duration-150 ease-in"
       leave-from-class="translate-y-0 opacity-100" leave-to-class="translate-y-1 opacity-0">
-      <HPopoverPanel :static="open || hover" class="absolute right-0 z-10 mt-0 w-screen max-w-sm  transform px-4 sm:px-0">
-        <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-          <div class="relative grid gap-8 bg-background p-4">
-            <a v-for="item in solutions" :key="item.name" :href="item.href"
-              class="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
-              <div class="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
-                <div v-html="item.icon"></div>
-              </div>
-              <div class="ml-4">
-                <p class="text-sm font-medium text-gray-900">
-                  {{ item.name }}
+      <HPopoverPanel :static="hover" class="absolute right-0 z-10 mt-0 w-48  transform px-4 sm:px-0">
+        <div class="overflow-hidden rounded-lg bg-black/5 dark:bg-white/5 ring-1 ring-black/10 dark:ring-white/10">
+          <div class="relative grid justify-items-center gap-4 p-4 px-0">
+            <div class="flex items-center ">
+              <div class="text-center items-center grid grid-cols-2 gap-2">
+                <p class="text-sm font-bold text-right">
+                  {{$t('theme')}}:
                 </p>
-                <p class="text-sm text-gray-500">
-                  {{ item.description }}
-                </p>
+                  <HSwitch v-model="theme" @click="setTheme(!theme)"
+                    class="relative inline-flex h-6 w-14 bg-background shrink-0 cursor-pointer rounded-full border-2 border-text transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                    <span class="sr-only">theme setting</span>
+                    <span aria-hidden="true" :class="theme ? 'translate-x-8' : 'translate-x-0'"
+                      class="z-[1] pointer-events-none flex justify-center items-center h-5 w-5 transform rounded-full bg-text text-background ring-0 transition duration-200 ease-in-out">
+                      <Transition name="fade">
+                        <Icon v-if="theme" name="ic:round-dark-mode" class="mx-auto"/>
+                        <Icon v-else name="material-symbols:light-mode" class="mx-auto"/>
+                      </Transition>
+                    </span>
+                    <span class="absolute z-0 h-full w-full text-xs font-bold flex items-center justify-center">
+                      <Transition name="fade">
+                        <span v-if="theme" class="pr-4">{{ $t('theme_light') }}</span>
+                        <span v-else class="pl-4">{{ $t('theme_dark') }}</span>
+                      </Transition>
+                    </span>
+                  </HSwitch>
               </div>
-            </a>
+            </div>
+            <div class="flex items-center">
+              <div class="text-center items-center grid grid-cols-2 gap-2">
+                <p class="text-sm font-bold text-right">
+                  {{$t('language')}}:
+                </p>
+                  <HSwitch v-model="lang" @click="setLang(!lang)"
+                    class="relative inline-flex h-8 w-14 bg-secondary shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                    <span class="sr-only">language setting</span>
+                    <span aria-hidden="true" :class="lang ? 'translate-x-6' : 'translate-x-0'"
+                      class="z-[1] pointer-events-none flex items-center justify-center text-sm font-bold h-7 w-7 transform rounded-full bg-primary text-background shadow-lg ring-0 transition duration-200 ease-in-out">
+                      <Transition name="fade">
+                        <span v-if="lang">TH</span>
+                        <span v-else>EN</span>
+                      </Transition>
+                    </span>
+                    <span class="absolute z-0 h-full w-full text-xs flex items-center justify-center">EN | TH</span>
+                  </HSwitch>
+              </div>
+            </div>
           </div>
-          <div class="bg-gray-50 p-4">
-            <a href="##"
-              class="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
-              <span class="flex items-center">
-                <span class="text-sm font-medium text-gray-900">
-                  Documentation
-                </span>
-              </span>
-              <span class="block text-sm text-gray-500">
-                Start integrating products and tools
-              </span>
-            </a>
-          </div>
+          
         </div>
       </HPopoverPanel>
     </transition>
@@ -50,95 +65,37 @@
 </template>
 
 <script setup>
-const hover = useState('hover',()=>false)
+const { locale, setLocale } = useI18n()
+const colorMode = useColorMode();
+
+const hover = useState('hover', () => false)
 const setHover = (value) => hover.value = value
 
-const solutions = [
-  {
-    name: 'Insights',
-    description: 'Measure actions your users take',
-    href: '##',
-    icon: `
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect width="48" height="48" rx="8" fill="#FFEDD5" />
-        <path
-          d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z"
-          stroke="#FB923C"
-          stroke-width="2"
-        />
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M16.7417 19.8094V28.1906L24 32.3812L31.2584 28.1906V19.8094L24 15.6188L16.7417 19.8094Z"
-          stroke="#FDBA74"
-          stroke-width="2"
-        />
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M20.7417 22.1196V25.882L24 27.7632L27.2584 25.882V22.1196L24 20.2384L20.7417 22.1196Z"
-          stroke="#FDBA74"
-          stroke-width="2"
-        />
-      </svg>
-    `,
-  },
-  {
-    name: 'Automations',
-    description: 'Create your own targeted content',
-    href: '##',
-    icon: `
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect width="48" height="48" rx="8" fill="#FFEDD5" />
-        <path
-          d="M28.0413 20L23.9998 13L19.9585 20M32.0828 27.0001L36.1242 34H28.0415M19.9585 34H11.8755L15.9171 27"
-          stroke="#FB923C"
-          stroke-width="2"
-        />
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M18.804 30H29.1963L24.0001 21L18.804 30Z"
-          stroke="#FDBA74"
-          stroke-width="2"
-        />
-      </svg>
-    `,
-  },
-  {
-    name: 'Reports',
-    description: 'Keep track of your growth',
-    href: '##',
-    icon: `
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect width="48" height="48" rx="8" fill="#FFEDD5" />
-        <rect x="13" y="32" width="2" height="4" fill="#FDBA74" />
-        <rect x="17" y="28" width="2" height="8" fill="#FDBA74" />
-        <rect x="21" y="24" width="2" height="12" fill="#FDBA74" />
-        <rect x="25" y="20" width="2" height="16" fill="#FDBA74" />
-        <rect x="29" y="16" width="2" height="20" fill="#FB923C" />
-        <rect x="33" y="12" width="2" height="24" fill="#FB923C" />
-      </svg>
-    `,
-  },
-]
+const lang = useState('language', () => locale.value !== 'en');
+const setLang = (value) => {
+  setLocale(!value ? 'en' : 'th')
+}
+
+const theme = useState('theme', () => true);
+const setTheme = (value) => {
+  colorMode.preference = value ? 'light' : 'dark'
+}
+
+
+onMounted(() => {
+  theme.value = colorMode.preference === 'light' || (colorMode.preference === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches);
+})
+
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+  position: absolute;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}</style>
