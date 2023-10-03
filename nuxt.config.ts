@@ -4,9 +4,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
+    ['@nuxtjs/color-mode',{classSuffix: ''}],
     '@pinia/nuxt',
     'nuxt-icon',
-    'nuxt-headlessui',
+    ['nuxt-headlessui', {prefix: 'H'}],
   ],
   i18n: {
     vueI18n: 'plugins/locales/i18n.js',
