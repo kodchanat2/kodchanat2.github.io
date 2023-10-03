@@ -22,4 +22,5 @@
 
 body {
     @apply bg-background text-text;
+    font-family: 'Prompt', sans-serif;
 }

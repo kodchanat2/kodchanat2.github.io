@@ -4,10 +4,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
-    ['@nuxtjs/color-mode',{classSuffix: ''}],
+    ['@nuxtjs/color-mode', { classSuffix: '' }],
     '@pinia/nuxt',
     'nuxt-icon',
-    ['nuxt-headlessui', {prefix: 'H'}],
+    ['nuxt-headlessui', { prefix: 'H' }],
+    ['@nuxtjs/google-fonts', {
+      download: false,
+      families: { 'Prompt': [200, 300, 400, 500, 600, 700], },
+    }],
   ],
   i18n: {
     vueI18n: 'plugins/locales/i18n.js',
