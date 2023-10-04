@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navbar />
-    <slot />
+    <Navbar class="sticky top-0"/>
+    <slot/>
   </div>
 </template>
   
