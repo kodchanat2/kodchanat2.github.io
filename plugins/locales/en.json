@@ -1,11 +1,18 @@
 {
     "title_short": "JOHN V.",
     "title": "JOHN VISKUL",
-    "alt_title": "I'm a web developer",
+    "alt_title": "I'm a {0}web developer{1}",
     "button_title": "Say hello to me",
 
     "theme": "Theme",
     "theme_light": "light",
     "theme_dark": "dark",
-    "language": "Language"
+    "language": "Language",
+
+    "since": "since",
+    "year": "years",
+
+    "about_msg_1": "I am a {0}web developer{1} with",
+    "about_msg_2": "of work experience and",
+    "about_msg_3": "of practice with small projects, also able to design web UI and write API servers. I enjoy working with new people and learning new things. If you have some fun projects, do not hesitate to contact me."
 }
