@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       download: false,
       families: { 'Prompt': [200, 300, 400, 500, 600, 700], },
     }],
+    'dayjs-nuxt',
   ],
   i18n: {
     vueI18n: 'plugins/locales/i18n.js',
