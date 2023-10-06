@@ -15,5 +15,18 @@
     "about_msg_1": "I am a {0}web developer{1} with",
     "about_msg_2": "of work experience and",
     "about_msg_3": "of practice with small projects, also able to design web UI and write API servers. I enjoy working with new people and learning new things. If you have some fun projects, do not hesitate to contact me.",
-    "link_award": "view all awards"
+    "link_award": "view all awards",
+
+    "skill_title": "Skills",
+    "skill_lang": "Programming Language",
+    "skill_stack": "Web Stack",
+    "skill_tool": "Tools",
+    "skill_soft": "Soft skill",
+    "skill_level_1": "beginner",
+    "skill_level_2": "intermediate",
+    "skill_level_3": "advanced",
+    "skill_level_4": "expert",
+    "skill_level_5": "why not?",
+    "skill_level_9": "current stack",
+    "skill_level_0": "last used at "
 }

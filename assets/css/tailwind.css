@@ -24,3 +24,20 @@ body {
     @apply bg-background text-text;
     font-family: 'Prompt', sans-serif;
 }
+
+* {
+    /* outline: blue 1px solid; */
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
