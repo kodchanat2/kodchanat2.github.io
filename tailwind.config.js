@@ -19,6 +19,9 @@ export default {
       spacing: {
         "navbar": "3rem",
       },
+      boxShadow: {
+        "line": "2px 4px 4px 2px var(--tw-shadow-color)"
+      }
     },
   },
   plugins: [],

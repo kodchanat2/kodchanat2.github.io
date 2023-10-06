@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink class="underline font-semibold text-lg">
+  <NuxtLink class="underline underline-offset-4 font-medium text-lg">
     <slot />
   </NuxtLink>
 </template>
