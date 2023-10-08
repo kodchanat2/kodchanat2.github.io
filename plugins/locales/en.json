@@ -28,5 +28,10 @@
     "skill_level_4": "expert",
     "skill_level_5": "why not?",
     "skill_level_9": "current stack",
-    "skill_level_0": "last used at "
+    "skill_level_0": "last used at ",
+
+    "project_title": "Projects",
+    "view_site": "VIEW SITE",
+    "project_exp_title": "Experimentals",
+    "link_project": "view all projects"
 }

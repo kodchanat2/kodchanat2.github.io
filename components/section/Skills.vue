@@ -37,15 +37,7 @@ const { $const } = useNuxtApp();
 
 const skills = $const.skills;
 
-const level = {
-  9: "current stack",
-  0: "last used at ",
-  5: "why not?",
-  4: "expert",
-  3: "advanced",
-  2: "intermediate",
-  1: "beginner",
-}
+
 function styleByLevel(level){
   switch(Number(level)){
     case 9:
@@ -58,7 +50,6 @@ function styleByLevel(level){
       return "font-light opacity-50";
   }
 }
-
 
 function sortByLevel(array) {
   return array.sort((a, b) => {

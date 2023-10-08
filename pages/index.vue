@@ -3,6 +3,7 @@
       <SectionHero />
       <SectionAbout />
       <SectionSkills />
+      <SectionProject />
     </div>
   </template>
   
