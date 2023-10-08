@@ -27,6 +27,18 @@
     "skill_level_4": "ชำนาญมาก",
     "skill_level_5": "แน่นอนอยู่แล้ว",
     "skill_level_9": "ใช้งานอยู่ในปัจจุบัน",
-    "skill_level_0": "เคยใช้งานเมื่อปี "
+    "skill_level_0": "เคยใช้งานเมื่อปี ",
 
+    "project_title": "ผลงาน",
+    "view_site": "ดูเว็บไซต์",
+    "project_exp_title": "ผลงานเชิงทดลอง",
+    "link_project": "ดูผลงานทั้งหมด",
+
+    "contact_title": "ติดต่อฉัน",
+    "message": "ข้อความ",
+    "from": "จาก",
+    "contact_back": "ช่องทางการติดต่อ",
+    "send_message": "ส่งข้อความถึงฉัน",
+    "or": "หรือ",
+    "scroll_top": "เลื่อนไปบนสุด"
 }

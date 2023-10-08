@@ -33,5 +33,14 @@
     "project_title": "Projects",
     "view_site": "VIEW SITE",
     "project_exp_title": "Experimentals",
-    "link_project": "view all projects"
+    "link_project": "view all projects",
+
+    "contact_title": "Contact me",
+    "message": "Message",
+    "from": "From",
+    "contact_back": "How can I contact you back",
+    "send_message": "Send message to me",
+    "or": "or",
+    "scroll_top": "scroll to top",
+    "copyright": "© kodchanat2"
 }
