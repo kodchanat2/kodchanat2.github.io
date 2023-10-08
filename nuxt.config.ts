@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     ['@nuxtjs/color-mode', { classSuffix: '' }],
     '@pinia/nuxt',
     'nuxt-icon',
-    ['nuxt-headlessui', { prefix: 'H' }],
     ['@nuxtjs/google-fonts', {
       download: false,
       families: { 'Prompt': [200, 300, 400, 500, 600, 700], },
