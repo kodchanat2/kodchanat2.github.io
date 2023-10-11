@@ -9,17 +9,17 @@
       </div>
       <div class="w-full flex justify-evenly items-center">
         <BaseTooltip v-for="link in links" :key="link.alt" :text="link.alt">
-          <a :href="link.href">
+          <NuxtLink :href="link.href" target="_blank">
             <Icon :name="link.icon" class="w-8 h-8 text-text/80 hover:text-text hover:scale-110 transition" />
-          </a>
+          </NuxtLink>
         </BaseTooltip>
       </div>
 
       <div class="w-full mt-8">
-        <div class="w-fit mx-auto flex flex-col items-center gap-2 cursor-pointer p-4 group" @click="scrollTop">
+        <NuxtLink class="w-fit mx-auto flex flex-col items-center gap-2 cursor-pointer p-4 group" :to="$route.path">
           <Icon name="uiw:up" size="2rem" class="group-hover:scale-110 group-hover:-translate-y-2 transition"/>
           <p class="group-hover:-translate-y-1 transition">{{ $t('scroll_top') }}</p>
-        </div>
+        </NuxtLink>
       </div>
 
       <div class="w-full text-center my-4">
@@ -32,14 +32,10 @@
 <script setup>
 
 const links = [
-  { icon: "fa6-brands:github", href: "#", alt: "github" },
-  { icon: "fa6-brands:linkedin", href: "#", alt: "linkedin" },
-  { icon: "fa6-solid:square-phone", href: "#", alt: "phone call" },
-  { icon: "ic:round-email", href: "#", alt: "email" },
+  { icon: "fa6-brands:github", href: "https://github.com/kodchanat2", alt: "github" },
+  { icon: "fa6-brands:linkedin", href: "https://www.linkedin.com/in/kodchanat2", alt: "linkedin" },
+  { icon: "fa6-solid:square-phone", href: "tel:+66822740014", alt: "phone call" },
+  { icon: "ic:round-email", href: "mailto:kodchanat2@gmail.com", alt: "email" },
 ]
-
-function scrollTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" })
-}
 
 </script>
