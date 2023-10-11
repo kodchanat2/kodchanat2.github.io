@@ -15,7 +15,7 @@
         <span v-html="$t('about_msg_3')" />
       </h3>
 
-      <BaseLink to="#" class="mt-4 ml-auto p-4">{{ $t('link_award') }} →</BaseLink>
+      <!-- <BaseLink to="#" class="mt-4 ml-auto p-4">{{ $t('link_award') }} →</BaseLink> -->
     </div>
   </div>
 </template>

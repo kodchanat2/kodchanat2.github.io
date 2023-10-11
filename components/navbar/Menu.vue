@@ -69,11 +69,11 @@ const list = [
     name: 'contact',
     to: '/#contact',
   },
-  {
-    name: 'browse',
-    page: true,
-    to: '#'
-  }
+  // {
+  //   name: 'browse',
+  //   page: true,
+  //   to: '#'
+  // }
 ]
 
 </script>
