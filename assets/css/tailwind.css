@@ -20,6 +20,23 @@
     }
 }
 
+/* For iphone svg status bar */
+:root {
+    --status-bg: #ffffff;
+    --status-text: #000000;
+}
+.dark {
+    --status-bg: #353739;
+    --status-text: #ffffff;
+}
+.status-text {
+    fill: var(--status-text);
+}
+.status-bg {
+    fill: var(--status-bg);
+}
+
+
 body {
     @apply bg-background text-text;
     font-family: 'Prompt', sans-serif;
