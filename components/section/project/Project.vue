@@ -41,9 +41,9 @@ const projects = [{
 }]
 
 const projectsExp = [
-  "infinity-crush",
-  "hex-snake",
   "popme",
+  "hex-snake",
+  "infinity-crush",
 ]
 
 </script>
