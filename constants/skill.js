@@ -37,8 +37,6 @@ const skills = [
       {name: 'Node.js', level: level.i},
       {name: 'puppeteer', level: level.i},
       {name: 'Socket.io', level: level.i},
-      {name: 'npm / yarn', level: level.a},
-      {name: 'Git', level: level.a},
       {name: 'Restful API', level: level.c},
       {name: 'Bootstrap', level: level.l, date: '2017'},
       {name: 'Ant Design', level: level.l, date: '2020'},
@@ -56,6 +54,8 @@ const skills = [
       {name: 'Adobe Photoshop', level: level.i},
       {name: 'Postman', level: level.c},
       {name: 'Visual Studio Code', level: level.y},
+      {name: 'npm / yarn', level: level.a},
+      {name: 'Git', level: level.a},
       {name: 'Android Studio', level: level.l, date: '2016'},
       {name: 'Unity3D', level: level.l, date: '2019'},
     ]
@@ -64,7 +64,7 @@ const skills = [
     title: 'skill_soft',
     description: '',
     list: [
-      {name: 'Web design', level: level.i},
+      {name: 'Web design'},
       {name: 'Adapatibility'},
       {name: 'Creativity'},
       {name: 'Public speaking'},
