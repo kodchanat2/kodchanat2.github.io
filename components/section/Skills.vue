@@ -71,7 +71,7 @@ function sortByLevel(array) {
   height: 100%;
   width: 2rem;
   left: 0;
-  background: linear-gradient(to right, var(--background) 0%, transparent 100%);
+  background: linear-gradient(to right, rgb(var(--background)) 0%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -79,6 +79,6 @@ function sortByLevel(array) {
 .side-fade::after {
   right: 0;
   left: auto;
-  background: linear-gradient(to left, var(--background) 0%, transparent 100%);
+  background: linear-gradient(to left, rgb(var(--background)) 0%, transparent 100%);
 }
 </style>
