@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full py-8">
+  <div id="project" class="w-full py-8 mt-navbar">
     <div class="w-full max-w-screen-lg mx-auto px-2 flex flex-col justify-center items-center">
       <h2 class="my-4 text-4xl px-4 font-semibold uppercase">{{ $t('project_title') }}</h2>
 

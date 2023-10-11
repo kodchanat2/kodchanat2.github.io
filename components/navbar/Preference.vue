@@ -2,7 +2,7 @@
   <div class="relative grid justify-items-center gap-4 p-4 px-0">
     <div class="flex items-center ">
       <div class="text-center items-center grid grid-cols-2 gap-2">
-        <p class="text-sm font-bold text-right">
+        <p class="text-right" :class="menu ? 'text-lg' : 'text-sm font-bold '">
           {{ $t('theme') }}:
         </p>
         <div @click="toggleTheme()"
@@ -26,7 +26,7 @@
     </div>
     <div class="flex items-center">
       <div class="text-center items-center grid grid-cols-2 gap-2">
-        <p class="text-sm font-bold text-right">
+        <p class="text-right" :class="menu ? 'text-lg' : 'text-sm font-bold '">
           {{ $t('language') }}:
         </p>
         <div @click="toggleLang()"
@@ -48,6 +48,12 @@
 </template>
 
 <script setup>
+defineProps({
+  menu: {
+    type: Boolean,
+    default: false
+  }
+})
 const { locale, setLocale } = useI18n()
 const colorMode = useColorMode();
 

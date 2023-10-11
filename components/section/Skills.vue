@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen py-4">
+  <div id="skill" class="w-screen py-4 pt-navbar">
     <div class="w-full max-w-screen-lg mx-auto md:px-2 flex flex-col justify-center">
       <h2 class="mt-4 text-4xl px-4 font-semibold uppercase">{{ $t('skill_title') }}</h2>
 

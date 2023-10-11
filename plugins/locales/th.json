@@ -2,7 +2,9 @@
     "title": "JOHNy lnwza",
     "alt_title": "รับบทเป็น {0}นักพัฒนาเว็บไซต์{1}",
     "button_title": "ทักทายสักหน่อย",
+    "home_title": "หน้าแรก",
 
+    "close": "ปิดหน้าต่าง",
     "theme": "ธีมสี",
     "theme_light": "สว่าง",
     "theme_dark": "มืด",

@@ -3,7 +3,9 @@
     "title": "JOHN VISKUL",
     "alt_title": "I'm a {0}web developer{1}",
     "button_title": "Say hello to me",
+    "home_title": "home",
 
+    "close": "close",
     "theme": "Theme",
     "theme_light": "light",
     "theme_dark": "dark",
