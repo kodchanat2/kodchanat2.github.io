@@ -60,25 +60,3 @@ function sortByLevel(array) {
   });
 }
 </script>
-
-<style scoped>
-.side-fade::before,
-.side-fade::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  /* height: 100%; */
-  width: 2rem;
-  left: 0;
-  background: linear-gradient(to right, rgb(var(--background)) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.side-fade::after {
-  right: 0;
-  left: auto;
-  background: linear-gradient(to left, rgb(var(--background)) 0%, transparent 100%);
-}
-</style>
