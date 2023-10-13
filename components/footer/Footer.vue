@@ -2,11 +2,11 @@
   <div class="w-screen bg-secondary pt-8 mt-16" id="contact">
     <div class="w-full max-w-sm mx-auto px-4 flex flex-col justify-center items-center">
       <h2 class="my-4 text-3xl px-4 font-semibold uppercase">{{ $t('contact_title') }}</h2>
-      <!-- <FooterContact />
+      <FooterContact />
       <div
         class="w-full flex items-center gap-2 my-4 font-medium before:contents:[''] before:w-full before:border-b-2 before:border-text after:contents:[''] after:w-full after:border-b-2 after:border-text">
         {{ $t('or') }}
-      </div> -->
+      </div>
       <div class="w-full flex justify-evenly items-center">
         <BaseTooltip v-for="link in links" :key="link.alt" :text="link.alt">
           <NuxtLink :href="link.href" target="_blank">

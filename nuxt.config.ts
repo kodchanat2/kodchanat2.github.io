@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   app: {
     buildAssetsDir: 'src',
   },
+  runtimeConfig: {
+    public: {
+      hooks: process.env.CONTACT_HOOK,
+    }
+  },
   // devtools: { enabled: true },
   modules: [
     '@nuxtjs/i18n',
