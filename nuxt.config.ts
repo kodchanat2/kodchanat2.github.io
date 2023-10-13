@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: false,
+  ssr: false,
+  app: {
+    buildAssetsDir: 'src',
+  },
   // devtools: { enabled: true },
   modules: [
     '@nuxtjs/i18n',
