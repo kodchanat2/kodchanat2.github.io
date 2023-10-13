@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts}",
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -10,7 +13,7 @@ export default {
         'primary': 'rgb(var(--primary))',
         'secondary': 'rgb(var(--secondary))',
         'accent': 'rgb(var(--accent))',
-       },       
+      },
       height: {
         "screen": "100dvh",
         "screen-small": "100svh",

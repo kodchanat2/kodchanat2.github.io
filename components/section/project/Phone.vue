@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-fit">
-    <img src="images/phone.webp" class="object-contain relative z-[2]" />
+    <img src="/images/phone.webp" class="object-contain relative z-[2]" />
 
     <div class="absolute top-0 w-full aspect-[248/490] p-[5.4%]">
       <div class="relative w-full h-full rounded-[5.5%] overflow-hidden shadow-2xl shadow-text/50">

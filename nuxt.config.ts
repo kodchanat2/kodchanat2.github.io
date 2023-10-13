@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   // devtools: { enabled: true },
   modules: [
     '@nuxtjs/i18n',
@@ -14,7 +15,7 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
   ],
   i18n: {
-    vueI18n: 'plugins/locales/i18n.js',
+    vueI18n: 'plugins/locales/i18n.config.ts',
     locales: [
       { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
       { code: 'th', iso: 'th-TH', file: 'th.json', name: 'ไทย' }
