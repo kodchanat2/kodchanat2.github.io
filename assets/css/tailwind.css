@@ -20,6 +20,16 @@
     }
 }
 
+* {
+    /* outline: blue 1px solid; */
+}
+
+body {
+    @apply bg-background text-text;
+    font-family: 'Prompt', sans-serif;
+}
+
+
 /* For iphone svg status bar */
 :root {
     --status-bg: #ffffff;
@@ -39,14 +49,30 @@
     fill: var(--status-bg);
 }
 
-
-body {
-    @apply bg-background text-text;
-    font-family: 'Prompt', sans-serif;
+/* Hero background */
+.hero-bg {
+    background-image:
+    conic-gradient(from 90deg at 2px 2px,
+        rgba(var(--background)/1) 90deg,
+        rgba(var(--background)/0.3) 90deg),
+        radial-gradient(circle, rgb(var(--background)) 10%,
+            transparent 50%),
+        radial-gradient(circle, rgba(var(--accent)/1) 1%,
+            transparent 50%);
+    background-size: 3rem 3rem,100vw 150vw,120vh 120vh ;
+    background-position: 0 0, -20vw -100vw, -50vh 10vh;
+    animation: hero-bg-anim 15s linear infinite;
 }
-
-* {
-    /* outline: blue 1px solid; */
+@keyframes hero-bg-anim {
+    0% {
+        background-position: 0 1.5rem, 100vw -50vw,-100vh 10vh;
+    }
+    50% {
+        background-position: 0 0, 50vw -100vw, -10vh 200vh;
+    }
+    100% {
+        background-position: 0 -1.5rem, -100vw 100vw, 20vh 130vh;
+    }
 }
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
