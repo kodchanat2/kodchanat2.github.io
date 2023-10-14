@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen bg-accent text-background py-8">
-    <div class="w-full max-w-screen-lg mx-auto px-2 flex flex-col justify-center items-center">
+  <div class="w-screen bg-secondary text-text/80 py-8">
+    <div class="w-full max-w-screen-md mx-auto px-2 flex flex-col justify-center items-center">
       <h3 class="px-4">
         <span v-html="$t('about_msg_1', ['<b>', '</b>'])" />
         <BaseTooltip class="px-2" :text="$t('since')+' '+workDate.format('DD/MM/YYYY')">

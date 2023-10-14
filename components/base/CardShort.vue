@@ -7,10 +7,10 @@
       <div class="w-full grid grid-cols-1 pr-2">
         <div class="w-full flex flex-col">
           <p class="font-medium truncate">{{ $t(`project_${name}_title`) }}</p>
-          <p class="text-sm font-light truncate">{{ $t(`project_${name}_description`) }}</p>
+          <p class="text-sm font-normal text-text/60 truncate">{{ $t(`project_${name}_description`) }}</p>
         </div>
       </div>
-      <NuxtLink :href="baseLink+name" target="_blank" class="w-fit p-2 px-3 rounded-full bg-primary shrink-0 transition-all hover:bg-accent hover:scale-105">
+      <NuxtLink :href="baseLink+name" target="_blank" class="w-fit p-2 px-3 rounded-full bg-accent shrink-0 transition-all hover:bg-primary hover:scale-105">
         <p class="text-xs font-medium whitespace-nowrap text-white flex justify-center items-center">
           {{ $t('view_site') }}
           <Icon name="ep:top-right" size="0.825rem" class="translate-x-1" />

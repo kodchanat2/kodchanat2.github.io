@@ -6,10 +6,10 @@
       <div class="w-full max-w-full overflow-hidden relative side-fade before:h-0 after:h-0 before:md:h-full after:md:h-full">
         <div class="w-full overflow-x-auto relative flex snap-x scrollbar-hide">
           <div
-            class="snap-center max-w-[calc(100vw-4rem)] w-96 shrink-0 bg-secondary/25 shadow-line shadow-secondary/50 border-2 border-secondary rounded-lg mx-2 md:mx-4 my-8 first:md:ml-10 last:mr-20"
+            class="snap-center max-w-[calc(100vw-4rem)] w-96 shrink-0 bg-gradient-to-tr from-secondary/25 to-accent/30 shadow-line shadow-secondary/50 border-2 border-secondary rounded-lg mx-2 md:mx-4 my-8 first:md:ml-10 last:mr-20"
             v-for="skill in skills" :key="skill.title">
             <div class="w-full mx-auto px-4 flex flex-col justify-center">
-              <h3 class="mt-4 text-xl font-semibold">
+              <h3 class="mt-4 pb-2 text-xl font-semibold w-full border-b-2 border-accent/30">
                 <span>{{ $t(skill.title) }}</span>
                 <!-- <span v-if="skill.description" class="text-sm font-light">・{{ $t(skill.description) }}</span> -->
               </h3>

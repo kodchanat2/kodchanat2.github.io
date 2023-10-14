@@ -1,7 +1,7 @@
 <template>
   <form class="w-full relative flex flex-col text-black gap-2" @submit.prevent="handleSubmit">
-    <BaseTextarea v-model="message" :label="$t('message') + '*'" id="message" class="h-32 resize-none" required />
     <BaseInput v-model="from" pattern=".*\S+.*" :label="$t('from') + '*'" id="from" required />
+    <BaseTextarea v-model="message" :label="$t('message') + '*'" id="message" class="h-32 resize-none" required />
     <BaseInput v-model="contact" :label="$t('contact_back')" id="contact" :placeholder="$t('contact_back_eg')" />
     <button type="submit" :disabled="isLoading"
       class="w-full mt-1 p-3 bg-primary text-background text-lg font-medium rounded-lg transition hover:bg-primary/80 disabled:bg-text/20">

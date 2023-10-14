@@ -6,9 +6,9 @@
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-3 relative">
       <div class="flex flex-col items-center justify-around col-span-2 h-full" :class="[swap && 'order-2']">
-        <h3 class="md:w-1/2 mt-4 text-xl font-semibold flex flex-col items-center text-center">
-          <span>{{ $t(project.title) }}</span>
-          <span v-if="project.description" class="text-sm font-normal mt-2">{{ $t(project.description) }}</span>
+        <h3 class="md:w-1/2 mt-4 flex flex-col items-center text-center">
+          <span class="text-2xl font-semibold">{{ $t(project.title) }}</span>
+          <span v-if="project.description" class="text-base font-normal text-text/60 mt-2">{{ $t(project.description) }}</span>
           <BaseButton class="mt-6" :href="project.link"
             target="_blank">
             {{ $t('view_site') }}

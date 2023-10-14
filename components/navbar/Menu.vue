@@ -14,8 +14,8 @@
     <div class="fixed top-0 left-0 z-20 w-screen overflow-hidden" :class="[!shown&&'hidden']">
       <div class="absolute right-0 top-0 bg-secondary rounded-full w-full aspect-square transition-transform expand-menu-animate" :class="[closing&&'reverse']"></div>
         <div class="overflow-hidden mt-navbar relative py-4 fade-down-enter-active fade-down-animate" :class="[closing&&'fade-down-leave-active fade-down-leave-to']">
-          <div v-for="(item, index) in list" :key="item.name" class="w-full p-3 text-center text-xl font-medium">
-            <NuxtLink :to="item.to" @click="toggleMenu">
+          <div v-for="(item, index) in list" :key="item.name" class="w-full p-3 text-center text-xl font-semibold">
+            <NuxtLink :to="item.to" class="uppercase" @click="toggleMenu">
               {{ $t(item.name + '_title') }}
               <Icon v-if="item.page" name="ep:right" />
             </NuxtLink>

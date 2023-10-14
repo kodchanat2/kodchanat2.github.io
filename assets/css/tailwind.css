@@ -4,19 +4,19 @@
 
 @layer base {
     :root {
-        --text: 1 31 50;
-        --background: 245 251 255;
-        --primary: 3 113 181;
-        --secondary: 169 220 254;
-        --accent: 3 134 216;
+        --text: 17 28 34;
+        --background: 248 250 252;
+        --primary: 60 67 124;
+        --secondary: 220 211 233;
+        --accent: 110 78 162;
     }
 
     .dark {
-        --text: 205 235 254;
-        --background: 0 6 10;
-        --primary: 74 184 252;
-        --secondary: 1 52 86;
-        --accent: 39 170 252;
+        --text: 221 232 238;
+        --background: 3 5 7;
+        --primary: 131 139 195;
+        --secondary: 31 22 44;
+        --accent: 125 93 177;
     }
 }
 
@@ -163,14 +163,16 @@ body {
 }
 
 /* fade-down */
-.fade-down-animate{
+.fade-down-animate {
     animation: fade-down 0.6s ease-out;
 }
+
 @keyframes fade-down {
     0% {
         opacity: 0;
         transform: translateY(-1rem);
     }
+
     30% {
         opacity: 0;
         transform: translateY(-1rem);
@@ -181,6 +183,7 @@ body {
         transform: translateY(0);
     }
 }
+
 .fade-down-enter-active {
     transition: opacity 0.4s 0.2s ease, transform 0.4s 0.2s ease;
 }

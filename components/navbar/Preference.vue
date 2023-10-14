@@ -6,16 +6,16 @@
           {{ $t('theme') }}:
         </p>
         <div @click="toggleTheme()"
-          class="relative inline-flex h-6 w-14 bg-background shrink-0 cursor-pointer rounded-full border-2 border-text transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+          class="relative inline-flex h-8 w-20 bg-background shrink-0 cursor-pointer rounded-full border-2 border-primary transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
           <span class="sr-only">theme setting</span>
-          <span aria-hidden="true" :class="theme ? 'translate-x-8' : 'translate-x-0'"
-            class="z-[1] pointer-events-none flex justify-center items-center h-5 w-5 transform rounded-full bg-text text-background ring-0 transition duration-200 ease-in-out">
+          <span aria-hidden="true" :class="theme ? 'translate-x-12' : 'translate-x-0'"
+            class="z-[1] pointer-events-none mt-0.5 ml-0.5 flex justify-center items-center h-6 w-6 transform rounded-full bg-primary text-background ring-0 transition duration-200 ease-in-out">
             <Transition name="fade">
               <Icon v-if="theme" name="ic:round-dark-mode" class="mx-auto" />
               <Icon v-else name="material-symbols:light-mode" class="mx-auto" />
             </Transition>
           </span>
-          <span class="absolute z-0 h-full w-full text-xs font-bold flex items-center justify-center">
+          <span class="absolute z-0 h-full w-full text-sm font-semibold  text-primary flex items-center justify-center">
             <Transition name="fade">
               <span v-if="theme" class="pr-4">{{ $t('theme_light') }}</span>
               <span v-else class="pl-4">{{ $t('theme_dark') }}</span>
@@ -30,17 +30,18 @@
           {{ $t('language') }}:
         </p>
         <div @click="toggleLang()"
-          class="relative inline-flex h-8 w-14 bg-accent shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+          class="relative inline-flex h-8 w-20 bg-accent/60 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
           <span class="sr-only">language setting</span>
-          <span aria-hidden="true" :class="lang ? 'translate-x-6' : 'translate-x-0'"
-            class="z-[1] pointer-events-none flex items-center justify-center text-sm font-bold h-7 w-7 transform rounded-full bg-secondary text-text shadow-lg ring-0 transition duration-200 ease-in-out">
+          <span aria-hidden="true" :class="lang ? 'translate-x-9' : 'translate-x-0'"
+            class="z-[1] pointer-events-none flex items-center justify-center text-sm font-bold h-7 w-10 transform rounded-full bg-primary text-background shadow-lg ring-0 transition duration-200 ease-in-out">
             <Transition name="fade">
               <span v-if="lang">TH</span>
               <span v-else>EN</span>
             </Transition>
           </span>
-          <span class="absolute z-0 h-full w-full text-xs text-background flex items-center justify-center">EN |
-            TH</span>
+          <span class="absolute z-0 h-full w-full text-xs text-background/80 flex items-center justify-center tracking-tighter">
+            EN ・ TH
+          </span>
         </div>
       </div>
     </div>

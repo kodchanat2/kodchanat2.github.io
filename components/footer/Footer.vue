@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen bg-secondary pt-8 mt-16" id="contact">
+  <div class="w-screen bg-gradient-to-t from-secondary/50 via-secondary to-secondary pt-8 mt-16" id="contact">
     <div class="w-full max-w-sm mx-auto px-4 flex flex-col justify-center items-center">
       <h2 class="my-4 text-3xl px-4 font-semibold uppercase">{{ $t('contact_title') }}</h2>
       <FooterContact />
