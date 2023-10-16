@@ -10,7 +10,7 @@
           <h3 class="text-3xl font-semibold uppercase mx-auto">{{ $t('project_exp_title') }}</h3>
           <p class="text-base text-text/60 font-normal mt-2">{{ $t('project_exp_description') }}</p>
         </div>
-        <div class="w-full flex flex-col">
+        <div id="pj-exp" class="w-full flex flex-col">
           <BaseCardShort v-for="(exp, index) in projectsExp" :key="exp" :name="exp" :line="!!index" />
         </div>
       </div>
@@ -21,6 +21,7 @@
 </template>
 
 <script setup>
+const {$gsap} = useNuxtApp();
 const projects = [{
   "title": "project_lensod_title",
   "description": "project_lensod_description",
@@ -45,5 +46,31 @@ const projectsExp = [
   "hex-snake",
   "infinity-crush",
 ]
+
+onMounted(() => {
+  setTimeout(() => {
+  $gsap.set('#pj-exp', {
+    opacity: 0,
+    y: 50,
+  })
+  $gsap.to('#pj-exp', {
+    scrollTrigger: {
+      trigger: '#pj-exp',
+      start: 'top bottom',
+      end: 'bottom 80%',
+      scrub: true,
+      // markers: true,
+      snap: {
+        snapTo: 'labels',
+        duration: 0.5,
+        delay: 0.2,
+        ease: 'power4.out'
+      }
+    },
+    opacity: 1,
+    y: 0,
+  })
+  }, 100);
+})
 
 </script>

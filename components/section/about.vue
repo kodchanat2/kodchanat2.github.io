@@ -1,7 +1,7 @@
 <template>
   <div class="w-screen bg-secondary text-text/80 py-8">
     <div class="w-full max-w-screen-md mx-auto px-2 flex flex-col justify-center items-center">
-      <h3 class="px-4">
+      <h3 id="about-text" class="px-4">
         <span v-html="$t('about_msg_1', ['<b>', '</b>'])" />
         <BaseTooltip class="px-2" :text="$t('since')+' '+workDate.format('DD/MM/YYYY')">
           {{ dayjs.diff(workDate, 'year') }}

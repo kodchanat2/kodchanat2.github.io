@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mb-16 mt-4 p-4 px-2 rounded-lg relative overflow-hidden md:overflow-visible">
+  <div ref="el" class="w-full mb-16 mt-4 p-4 px-2 rounded-lg relative overflow-hidden md:overflow-visible">
     <div class="md:hidden absolute z-0 top-0 left-0 w-full h-full flex items-end blur">
       <div class="w-full h-3/4 absolute z-10 top-0 bg-gradient-to-t from-transparent via-background to-background" />
       <img :src="`/images/projects/${project.img}_desktop.webp`" class="h-3/4 object-cover opacity-70" />
@@ -8,9 +8,9 @@
       <div class="flex flex-col items-center justify-around col-span-2 h-full" :class="[swap && 'order-2']">
         <h3 class="md:w-1/2 mt-4 flex flex-col items-center text-center">
           <span class="text-2xl font-semibold">{{ $t(project.title) }}</span>
-          <span v-if="project.description" class="text-base font-normal text-text/60 mt-2">{{ $t(project.description) }}</span>
-          <BaseButton class="mt-6" :href="project.link"
-            target="_blank">
+          <span v-if="project.description" class="text-base font-normal text-text/60 mt-2">{{ $t(project.description)
+          }}</span>
+          <BaseButton class="mt-6" :href="project.link" target="_blank">
             {{ $t('view_site') }}
             <Icon name="ep:top-right" size="1.25rem" class="ml-1 translate-x-1" />
           </BaseButton>
@@ -21,17 +21,22 @@
               class="absolute top-[5%] left-1/2 -translate-x-1/2 object-cover w-[74.5%] aspect-[595/372]" />
             <img src="/images/desktop.webp" class="relative" />
           </div>
-          <SectionProjectPhone :src="`/images/projects/${project.img}_phone.webp`" class="md:hidden scale-110 -translate-x-4 -translate-y-4"/>
+          <SectionProjectPhone :src="`/images/projects/${project.img}_phone.webp`"
+            class="md:hidden scale-110 -translate-x-4 -translate-y-4" />
         </div>
       </div>
-      <div class="hidden md:flex justify-center">
-        <SectionProjectPhone :src="`/images/projects/${project.img}_phone.webp`" :class="swap?'translate-x-10' :'-translate-x-10'"/>
+      <div ref="phone" class="hidden md:flex justify-center">
+        <SectionProjectPhone :src="`/images/projects/${project.img}_phone.webp`"
+          :class="swap ? 'translate-x-10' : '-translate-x-10'" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const { $gsap } = useNuxtApp();
+const el = ref(null);
+const phone = ref(null);
 defineProps({
   project: {
     type: Object,
@@ -42,4 +47,38 @@ defineProps({
     default: false,
   },
 });
+
+onMounted(() => {
+  setTimeout(() => {
+    $gsap.set(el.value, {
+      opacity: 0,
+      y: 100,
+    })
+    $gsap.to(el.value, {
+      scrollTrigger: {
+        trigger: el.value,
+        start: 'top 80%',
+        end: 'top center',
+        scrub: true,
+        // markers: true,
+      },
+      opacity: 1,
+      y: 0,
+    })
+    $gsap.set(phone.value, {
+      y: 0,
+    })
+    $gsap.to(phone.value, {
+      scrollTrigger: {
+        trigger: phone.value,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+        // markers: true,
+      },
+      y: 100,
+    })
+
+  }, 100);
+})
 </script>

@@ -21,7 +21,13 @@ export default defineNuxtConfig({
       families: { 'Prompt': [200, 300, 400, 500, 600, 700], },
     }],
     'dayjs-nuxt',
+    '@hypernym/nuxt-gsap',
   ],
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+    },
+  },
   i18n: {
     vueI18n: 'plugins/locales/i18n.config.ts',
     locales: [

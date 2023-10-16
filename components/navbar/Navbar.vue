@@ -1,7 +1,7 @@
 <template>
   <nav class="w-full h-navbar bg-background/70 backdrop-blur flex justify-center items-center relative z-30">
     <div class="w-full max-w-screen-lg flex justify-between items-center ml-4">
-      <NuxtLink to="/" class="text-2xl font-bold z-30 hover:text-accent">{{ $t('title_short') }}</NuxtLink>
+      <NuxtLink id="nav-title" to="/" class="text-2xl font-bold z-30 hover:text-accent translate-x-full opacity-0">{{ $t('title_short') }}</NuxtLink>
       <div class="hidden md:flex justify-between items-center">
         <NavbarSetting />
       </div>
@@ -13,5 +13,27 @@
 </template>
 
 <script setup>
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  $gsap.to(['#nav-title'], {
+    scrollTrigger: {
+      trigger: '#hero-title',
+      start: '-100% top',
+      end: 'bottom top',
+      scrub: true,
+      // markers: true,
+      snap: {
+        snapTo: 'labels',
+        duration: 0.5,
+        delay: 0.2,
+        ease: 'power4.out'
+      }
+    },
+    x: 0,
+    opacity: 1,
+
+  });
+})
 
 </script>
