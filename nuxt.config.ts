@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     ['@nuxtjs/color-mode', { classSuffix: '' }],
-    '@pinia/nuxt',
+    ['@pinia/nuxt',{ storeDirs: ['~/stores/*'] }],
     'nuxt-icon',
     ['@nuxtjs/google-fonts', {
       download: false,
