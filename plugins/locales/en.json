@@ -6,7 +6,7 @@
 
     "title_short": "JOHN V.",
     "title": "JOHN VISKUL",
-    "alt_title": "I'm a {0}web developer{1}",
+    "alt_title": [ "I'm a ", "web developer" ],
     "button_title": "Say hello to me",
     "home_title": "home",
 
@@ -19,9 +19,9 @@
     "since": "since",
     "year": "years",
 
-    "about_msg_1": "I am a {0}web developer{1} with",
-    "about_msg_2": "of work experience and",
-    "about_msg_3": "of practice with small projects, also able to design web UI and write API servers. I enjoy working with new people and learning new things. If you have some fun projects, do not hesitate to contact me.",
+    "about_msg": "I am a {webdev} with{eyear}of work experience and{pyear}of practice with small projects, also able to design web UI and write API servers. I enjoy working with new people and learning new things. If you have some fun projects, do not hesitate to {contact}.",
+    "about_webdev": "web developer",
+    "about_contact": "contact me",
     "link_award": "view all awards",
 
     "skill_title": "Skills",

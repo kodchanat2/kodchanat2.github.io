@@ -4,7 +4,12 @@
       <div />
       <div class="text-center">
         <h1 id="hero-title" class="text-5xl sm:text-6xl font-semibold">{{ $t('title') }}</h1>
-        <h2 id="hero-desc" class="mt-4 text-xl font-normal text-primary" v-html="$t('alt_title', ['<b>', '</b>'])" />
+        <h2 id="hero-desc" class="mt-4 text-xl font-normal text-primary">
+          {{$rt($tm('alt_title')[0])}}
+          <span class="font-semibold">
+            {{$rt($tm('alt_title')[1])}}
+          </span>
+        </h2>
       </div>
       <NuxtLink
         class="w-fit p-6 px-8 rounded-xl border-2 border-primary text-primary bg-background flex justify-center items-center text-xl font-medium cursor-pointer shadow-line shadow-primary transition-all duration-300 hover:scale-110 hover:shadow-none hover:bg-secondary/70"
