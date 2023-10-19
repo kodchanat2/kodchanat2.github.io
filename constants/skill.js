@@ -34,7 +34,6 @@ const skills = [
       { name: 'Vue.js', alt: 'vuejs', level: level.i },
       { name: 'Nuxt.js', alt: 'nuxtjs', level: level.c },
       { name: 'Express.js', alt: 'expressjs', level: level.i },
-      { name: 'Node.js', alt: 'nodejs', level: level.i },
       { name: 'puppeteer', icon: 'devicon:puppeteer', level: level.i },
       { name: 'Socket.io', icon: 'logos:socket-io', level: level.i },
       { name: 'Restful API', icon: 'dashicons:rest-api', level: level.c },
@@ -52,12 +51,13 @@ const skills = [
     description: '',
     list: [
       { name: 'Figma', alt: 'figma', level: level.c },
-      { name: 'Adobe Photoshop', alt: 'photoshop', mono:true, level: level.i },
       { name: 'Postman', alt: 'postman', mono:true, level: level.c },
       { name: 'VS Code', alt: 'vscode', level: level.y },
       { name: 'npm', icon: 'logos:npm', level: level.a },
       { name: 'yarn', icon: 'devicon:yarn', level: level.a },
       { name: 'Git', alt: 'git', mono:true, level: level.a },
+      { name: 'Node.js', alt: 'nodejs', level: level.i },
+      { name: 'Adobe Photoshop', alt: 'photoshop', mono:true, level: level.i },
       { name: 'Android Studio', alt: 'androidstudio', level: level.l, date: '2016' },
       { name: 'Unity3D', alt: 'unity', level: level.l, date: '2019' },
     ]
