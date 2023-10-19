@@ -15,6 +15,15 @@ export default defineNuxtConfig({
         { property: 'twitter:image', content: 'https://john-v.is-cool.dev/thumbnail.png' },
         { property: 'format-detection', content: 'telephone=no' }
       ],
+      script: [
+        {
+          innerHTML: `(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "jd33997k1e");`
+        }
+      ],
     }
   },
   runtimeConfig: {
