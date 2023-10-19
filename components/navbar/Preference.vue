@@ -35,12 +35,12 @@
           <span aria-hidden="true" :class="lang ? 'translate-x-9' : 'translate-x-0'"
             class="z-[1] pointer-events-none flex items-center justify-center text-sm font-bold h-7 w-10 transform rounded-full bg-primary text-background shadow-lg ring-0 transition duration-200 ease-in-out">
             <Transition name="fade">
-              <span v-if="lang">TH</span>
+              <span v-if="lang">ไทย</span>
               <span v-else>EN</span>
             </Transition>
           </span>
           <span class="absolute z-0 h-full w-full text-xs text-background/80 flex items-center justify-center tracking-tighter">
-            EN ・ TH
+            EN ・ ไทย
           </span>
         </div>
       </div>
@@ -58,11 +58,13 @@ defineProps({
 const { locale, setLocale } = useI18n()
 const colorMode = useColorMode();
 
-const lang = useState('language', () => locale.value !== 'en');
+const lang = useState('language', () => false);
 const toggleLang = () => {
-  lang.value = !lang.value
-  setLocale(!lang.value ? 'en' : 'th')
+  setLocale(locale.value !== 'en' ? 'en' : 'th')
 }
+watch(locale, () => {
+  lang.value = locale.value !== 'en'
+});
 
 const theme = useState('theme', () => true);
 const toggleTheme = () => {
@@ -72,6 +74,7 @@ const toggleTheme = () => {
 
 
 onMounted(() => {
+  lang.value = locale.value !== 'en';
   theme.value = colorMode.preference === 'light' || (colorMode.preference === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches);
 })
 
