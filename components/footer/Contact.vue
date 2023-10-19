@@ -1,6 +1,6 @@
 <template>
   <form class="w-full relative flex flex-col text-black gap-2" @submit.prevent="handleSubmit">
-    <p class="text-sm text-center font-light text-text/70">{{ $t('contact_description') }}</p>
+    <p class="text-sm text-center mb-2 font-light text-text/70">{{ $t('contact_description') }}</p>
     <BaseInput v-model="from" pattern=".*\S+.*" :label="$t('from') + '*'" id="from" required />
     <BaseTextarea v-model="message" :label="$t('message') + '*'" id="message" class="h-32 resize-none" required />
     <BaseInput v-model="contact" :label="$t('contact_back')" id="contact" :placeholder="$t('contact_back_eg')" />
