@@ -51,11 +51,12 @@
     "project_popme_description": "Balls matching game.",
 
     "contact_title": "Contact me",
+    "contact_description": "send a free message to me from this website. no registration required.",
     "message": "Message",
     "from": "From",
     "contact_back": "How can I contact you back",
     "contact_back_eg": "email, phone number, facebook, etc.",
-    "send_message": "Send message to me",
+    "send_message": "Send message to JOHN",
     "sending_message": "Sending message...",
     "message_sent": "Thank you for your message.",
     "message_sent_description": "I will contact you back as soon as possible.",

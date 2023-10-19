@@ -51,11 +51,12 @@
     "project_popme_description": "เกมจับคู่สีลูกบอล",
 
     "contact_title": "ติดต่อฉัน",
+    "contact_description": "ส่งข้อความถึงผมผ่านเว็บไซต์นี้ ฟรี! ไม่ต้องลงทะเบียนใดๆ",
     "message": "ข้อความ",
     "from": "จาก",
     "contact_back": "ช่องทางการติดต่อ",
     "contact_back_eg": "อีเมล, เบอร์โทร, ไลน์, อื่นๆ",
-    "send_message": "ส่งข้อความถึงฉัน",
+    "send_message": "ส่งข้อความถึง JOHN",
     "sending_message": "กำลังส่ง...",
     "message_sent": "ขอบคุณสำหรับข้อความ",
     "message_sent_description": "ผมจะตอบกลับข้อความของคุณโดยเร็วที่สุด",
