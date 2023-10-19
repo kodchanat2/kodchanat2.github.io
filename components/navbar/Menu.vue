@@ -20,7 +20,7 @@
       <div class="overflow-hidden mt-navbar relative py-4 fade-down-enter-active fade-down-animate"
         :class="[closing && 'fade-down-leave-active fade-down-leave-to']">
         <div v-for="(item, index) in list" :key="item.name" class="w-full p-3 text-center text-xl font-semibold">
-          <NuxtLink :to="item.to" class="uppercase" @click="toggleMenu">
+          <NuxtLink :to="item.to" class="uppercase" :class="routeStore.route==item.name&&'text-primary'" @click="toggleMenu">
             {{ $t(item.name + '_title') }}
             <Icon v-if="item.page" name="ep:right" />
           </NuxtLink>
@@ -35,6 +35,9 @@
 </template>
 
 <script setup>
+import { useRouteStore } from '~/stores/routeStore';
+
+const routeStore = useRouteStore();
 const shown = useState('show', () => false)
 const closing = useState('closing', () => false)
 let timer = null;

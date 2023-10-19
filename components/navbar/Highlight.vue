@@ -14,6 +14,7 @@
 import { storeToRefs } from 'pinia';
 import { useRouteStore } from '~/stores/routeStore';
 const routeStore = useRouteStore();
+const {locale} = useI18n();
 const { route } = storeToRefs(routeStore);
 const hf = ref(null);
 
@@ -35,14 +36,15 @@ const list = [
     to: '/#contact',
   },
 ]
-
-watch(route, () => {
+const setHighlightPosition = async () =>{
+  await nextTick();
+  // console.log('trigger hightlight');
   const curr = document.querySelector(`#nav-${route.value}`);
-  if(!curr) return;
   hf.value.style.transform = `translateX(${curr.offsetLeft-4}px)`;
   hf.value.style.width = `${curr.offsetWidth}px`;
-  // console.log(curr);
+}
 
-})
+watch([route,()=>locale.value], setHighlightPosition);
+onMounted(()=>setHighlightPosition());
 
 </script>
