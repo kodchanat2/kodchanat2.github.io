@@ -4,9 +4,9 @@
       :class="shown ? '' : ''" @click="toggleMenu">
       <slot />
       <div class=" bg-secondary rounded-full p-1 transition-colors">
-        <Icon :name="shown ? 'mdi:close-thick' : 'ic:baseline-settings'" aria-hidden="true"
-          class="w-8 h-8 transition-transform duration-500 delay-100"
-          :class="shown && !closing ? 'scale-110 rotate-90' : 'scale-100 rotate-0'" />
+        <Icon :name="shown && !closing ? 'mdi:close-thick' : 'oi:menu'" aria-hidden="true"
+          class="w-8 h-8 transition-all duration-500 delay-100"
+          :class="shown && !closing ? 'scale-110 -rotate-90 text-accent' : 'scale-75 -translate-y-px rotate-0'" />
       </div>
     </div>
 
