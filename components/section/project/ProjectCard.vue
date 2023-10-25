@@ -2,7 +2,7 @@
   <div ref="el" class="w-full mb-16 mt-4 p-4 px-2 rounded-lg relative overflow-hidden md:overflow-visible">
     <div class="md:hidden absolute z-0 top-0 left-0 w-full h-full flex items-end blur">
       <div class="w-full h-3/4 absolute z-10 top-0 bg-gradient-to-t from-transparent via-background to-background" />
-      <img :src="`/images/projects/${project.img}_desktop.webp`" class="h-3/4 object-cover opacity-70" />
+      <img :src="`/images/projects/${project.img}_desktop.webp`" class="h-3/4 object-cover opacity-70" :alt="`${project.img}-desktop`" />
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-3 relative">
       <div class="flex flex-col items-center justify-around col-span-2 h-full" :class="[swap && 'order-2']">
@@ -17,17 +17,17 @@
         </h3>
         <div class="grid grid-cols-4 items-end md:grid-cols-1 mt-6 p-4  rounded-md">
           <div class="relative col-span-3">
-            <img :src="`/images/projects/${project.img}_desktop.webp`"
+            <img :src="`/images/projects/${project.img}_desktop.webp`" :alt="`${project.img}-desktop`"
               class="absolute top-[5%] left-1/2 -translate-x-1/2 object-cover w-[74.5%] aspect-[595/372]" />
-            <img src="/images/desktop.webp" class="relative" />
+            <img src="/images/desktop.webp" class="relative" alt="desktop" />
           </div>
           <SectionProjectPhone :src="`/images/projects/${project.img}_phone.webp`"
-            class="md:hidden scale-110 -translate-x-4 -translate-y-4" />
+            class="md:hidden scale-110 -translate-x-4 -translate-y-4" :alt="`${project.img}-phone`" />
         </div>
       </div>
       <div ref="phone" class="hidden md:flex justify-center">
         <SectionProjectPhone :src="`/images/projects/${project.img}_phone.webp`"
-          :class="swap ? 'translate-x-10' : '-translate-x-10'" />
+          :class="swap ? 'translate-x-10' : '-translate-x-10'" :alt="`${project.img}-phone`" />
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@ onMounted(() => {
     $gsap.to(el.value, {
       scrollTrigger: {
         trigger: el.value,
-        start: 'top 80%',
+        start: 'top bottom',
         end: 'top center',
         scrub: true,
         // markers: true,

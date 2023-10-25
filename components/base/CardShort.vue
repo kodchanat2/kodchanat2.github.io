@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex">
     <div class="w-14 shrink-0 my-4 mr-2">
-      <img :src="`${baseLink}/${name}/favicon.ico`" class="w-full" />
+      <img :src="`${baseLink}/${name}/favicon.ico`" class="w-full" :alt="`${name}-icon`" />
     </div>
     <div class="w-full flex justify-between items-center pl-2" :class="[line && 'border-t border-text/25']">
       <div class="w-full grid grid-cols-1 pr-2">

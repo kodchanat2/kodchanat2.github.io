@@ -1,10 +1,10 @@
 <template>
   <div class="relative w-fit">
-    <img src="/images/phone.webp" class="object-contain relative z-[2]" />
+    <img src="/images/phone.webp" class="object-contain relative z-[2]" alt="phone" />
 
     <div class="absolute top-0 w-full aspect-[248/490] p-[5.4%]">
       <div class="relative w-full h-full rounded-[5.5%] overflow-hidden shadow-2xl shadow-text/50">
-        <img :src="src" class="object-contain absolute w-full -top-[3%] z-0" />
+        <img :src="src" class="object-contain absolute w-full -top-[3%] z-0" :alt="alt" />
 
         <svg viewBox="0 0 500 60" class="w-full absolute top-0 z-[1]" xmlns="http://www.w3.org/2000/svg">
           <rect width="500" height="60" class="status-bg" />
@@ -39,6 +39,10 @@ defineProps({
   src: {
     type: String,
     required: true,
+  },
+  alt: {
+    type: String,
+    default: 'phone-content',
   }
 })
 </script>
