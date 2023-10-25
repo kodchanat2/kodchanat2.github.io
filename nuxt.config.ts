@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          innerHTML: `(function(c,l,a,r,i,t,y){
+          innerHTML: process.env.DEV_MODE ? '' : `(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
@@ -52,12 +52,13 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: 'plugins/locales/i18n.config.ts',
+    baseUrl: process.env.BASE_URL,
     locales: [
       { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
       { code: 'th', iso: 'th-TH', file: 'th.json', name: 'ไทย' }
     ],
     defaultLocale: 'en',
-    strategy: "no_prefix",
+    // strategy: "no_prefix",
     lazy: true,
     langDir: 'plugins/locales/',
     detectBrowserLanguage: {

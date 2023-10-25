@@ -10,6 +10,9 @@
 import { useRouteStore } from '~/stores/routeStore';
 const routeStore = useRouteStore();
 const { $gsap } = useNuxtApp();
+const head = useLocaleHead({addDirAttribute: true,addSeoAttributes: true});
+
+useHead(head.value);
 
 onMounted(() => {
   $gsap.set('#about-text', {
