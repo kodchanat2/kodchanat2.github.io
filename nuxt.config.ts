@@ -14,6 +14,9 @@ export default defineNuxtConfig({
         { property: 'twitter:image', content: process.env.BASE_URL + '/thumbnail.png' },
         { property: 'format-detection', content: 'telephone=no' }
       ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: process.env.BASE_URL + '/favicon.ico' },
+      ],
       script: [
         {
           innerHTML: process.env.DEV_MODE ? '' : `(function(c,l,a,r,i,t,y){
