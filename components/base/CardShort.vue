@@ -32,5 +32,6 @@ defineProps({
   },
 });
 
-const baseLink = useRuntimeConfig().public.base_url;
+// const baseLink = useRuntimeConfig().public.base_url;
+const baseLink = 'https://kodchanat2.github.io';
 </script>
