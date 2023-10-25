@@ -9,10 +9,9 @@ export default defineNuxtConfig({
         { property: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
         { property: 'og:type', content: 'website' },
         { property: 'twitter:card', content: 'summary_large_image' },
-        { property: 'og:url', content: 'https://john-v.is-cool.dev/' },
-        { property: 'twitter:url', content: 'https://john-v.is-cool.dev/' },
-        { property: 'og:image', content: 'https://john-v.is-cool.dev/thumbnail.png' },
-        { property: 'twitter:image', content: 'https://john-v.is-cool.dev/thumbnail.png' },
+        { property: 'twitter:url', content: process.env.BASE_URL },
+        { property: 'og:image', content: process.env.BASE_URL + '/thumbnail.png' },
+        { property: 'twitter:image', content: process.env.BASE_URL + '/thumbnail.png' },
         { property: 'format-detection', content: 'telephone=no' }
       ],
       script: [
@@ -29,6 +28,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       hooks: process.env.CONTACT_HOOK,
+      base_url: process.env.BASE_URL,
     }
   },
   // devtools: { enabled: true },
