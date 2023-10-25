@@ -20,6 +20,7 @@ jobs:
         env:
           NITRO_PRESET: github_pages
           CONTACT_HOOK: ${{ vars.CONTACT_HOOK }}
+          BASE_URL: ${{ vars.BASE_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
