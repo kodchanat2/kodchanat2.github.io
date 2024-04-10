@@ -28,6 +28,9 @@ body {
     @apply bg-background text-text;
     font-family: 'Prompt', sans-serif;
 }
+pre {
+    font-family: 'Prompt', sans-serif;
+}
 
 
 /* For iphone svg status bar */

@@ -40,6 +40,7 @@
 
     "project_title": "ผลงาน",
     "view_site": "ดูเว็บไซต์",
+    "read_more": "อ่านเพิ่มเติม",
     "project_exp_title": "ผลงานเชิงทดลอง",
     "project_exp_description": "ผลงานเหล่านี้ถูกพัฒนาขึ้นเพื่อเรียนรู้สิ่งใหม่ๆ และเพื่อทดสอบความสามารถของตัวเอง",
     "link_project": "ดูผลงานทั้งหมด",
@@ -69,5 +70,7 @@
     "message_sent_failed": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
     "or": "หรือ",
     "scroll_top": "เลื่อนไปบนสุด",
-    "copyright": "© kodchanat2"
+    "copyright": "© kodchanat2",
+
+    "page_not_found": "ไม่พบหน้าที่คุณต้องการ"
 }

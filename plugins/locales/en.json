@@ -40,6 +40,7 @@
 
     "project_title": "Projects",
     "view_site": "VISIT SITE",
+    "read_more": "READ MORE",
     "project_exp_title": "Experimentals",
     "project_exp_description": "These are my experimental projects. I developed these for learning new things and sastisfying my curiosity.",
     "link_project": "view all projects",
@@ -69,5 +70,7 @@
     "message_sent_failed": "Failed to send message. Please try again later.",
     "or": "or",
     "scroll_top": "scroll to top",
-    "copyright": "© kodchanat2"
+    "copyright": "© kodchanat2",
+
+    "page_not_found": "Page not found"
 }
