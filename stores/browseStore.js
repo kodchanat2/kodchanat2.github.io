@@ -7,5 +7,12 @@ export const useBrowseStore = defineStore('browse', {
         setBrowse(browse) {
             this.browse = browse;
         },
+        async fetch() {
+            const res = await $fetch((useRuntimeConfig().public.edge_url || '')+'/api/fetch', {
+                //no cors
+                mode: 'no-cors',
+            });
+            this.setBrowse(res);
+        }
     },
 })

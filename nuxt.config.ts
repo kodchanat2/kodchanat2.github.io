@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     public: {
       hooks: process.env.CONTACT_HOOK,
       base_url: process.env.BASE_URL,
+      edge_url: process.env.EDGE_URL,
     }
   },
   // devtools: { enabled: true },
