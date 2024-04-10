@@ -65,13 +65,13 @@ body {
 }
 @keyframes hero-bg-anim {
     0% {
-        background-position: 0 1.5rem, 100vw -50vw,-100vh 10vh;
+        background-position: 0 3rem, 100vw -50vw,-100vh 10vh;
     }
     50% {
         background-position: 0 0, 50vw -100vw, -10vh 200vh;
     }
     100% {
-        background-position: 0 -1.5rem, -100vw 100vw, 20vh 130vh;
+        background-position: 0 -3rem, -100vw 100vw, 20vh 130vh;
     }
 }
 

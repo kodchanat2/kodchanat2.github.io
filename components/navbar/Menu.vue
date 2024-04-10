@@ -20,9 +20,10 @@
       <div class="overflow-hidden mt-navbar relative py-4 fade-down-enter-active fade-down-animate"
         :class="[closing && 'fade-down-leave-active fade-down-leave-to']">
         <div v-for="(item, index) in list" :key="item.name" class="w-full p-3 text-center text-xl font-semibold">
-          <NuxtLink :to="item.to" class="uppercase" :class="routeStore.route==item.name&&'text-primary'" @click="toggleMenu">
+          <NuxtLink :to="localePath(item.page?item.to:{hash: item.to})" class="uppercase" :class="routeStore.route == item.name && 'text-primary'"
+            @click="toggleMenu">
             {{ $t(item.name + '_title') }}
-            <Icon v-if="item.page" name="ep:right" />
+            <!-- <Icon v-if="item.page" name="ep:right" /> -->
           </NuxtLink>
         </div>
         <NavbarPreference class="mt-4" :menu="true" />
@@ -36,7 +37,14 @@
 
 <script setup>
 import { useRouteStore } from '~/stores/routeStore';
+const { $const } = useNuxtApp();
 
+const props = defineProps({
+  home: {
+    type: Boolean,
+    default: true,
+  }
+})
 const routeStore = useRouteStore();
 const shown = useState('show', () => false)
 const closing = useState('closing', () => false)
@@ -57,28 +65,6 @@ const toggleMenu = () => {
   }, 500);
 }
 
-const list = [
-  {
-    name: 'home',
-    to: '/',
-  },
-  {
-    name: 'skill',
-    to: '/#skill',
-  },
-  {
-    name: 'project',
-    to: '/#project',
-  },
-  {
-    name: 'contact',
-    to: '/#contact',
-  },
-  // {
-  //   name: 'browse',
-  //   page: true,
-  //   to: '#'
-  // }
-]
+const list = computed(() => props.home ? $const.route_list : $const.route_list.filter(item => item.page))
 
 </script>

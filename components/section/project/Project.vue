@@ -23,20 +23,17 @@
 <script setup>
 const {$gsap} = useNuxtApp();
 const projects = [{
-  "title": "project_lensod_title",
-  "description": "project_lensod_description",
+  "name": "lensod",
   "img": "lensod",
   "link": 'https://www.lensod.com/',
 },
 {
-  "title": "project_lensod_mc_title",
-  "description": "project_lensod_mc_description",
+  "name": "lensod_mc",
   "img": "lensod_mc",
   "link": 'https://www.lensod.com/browse/mc',
 },
 {
-  "title": "project_bff_title",
-  "description": "project_bff_description",
+  "name": "bff",
   "img": "bff",
   "link": "https://bff-whal-dolph.web.app",
 }]

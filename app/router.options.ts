@@ -24,6 +24,14 @@ export default <RouterConfig>{
       };
     }
 
+    if (to.path.includes('/browse/')) {
+      return {
+        left: 0,
+        top: 0,
+        behavior: 'smooth',
+      };
+    }
+
     // this will use saved scroll position on browser forward/back navigation
     return new Promise((resolve) => {
       setTimeout(() => {
