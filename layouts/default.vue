@@ -15,6 +15,7 @@ const head = useLocaleHead({addDirAttribute: true,addSeoAttributes: true});
 useHead(head.value);
 
 onMounted(() => {
+  console.log($fetch('/api/fetch'));
   $gsap.set('#about-text', {
     opacity: 0,
     y: 50,
