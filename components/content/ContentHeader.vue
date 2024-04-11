@@ -5,7 +5,7 @@
       <p class="font-normal text-text/60" :class="head?'text-base':'text-sm truncate'">{{ data.description }}</p>
       <p class="font-medium mt-2" :class="head?'text-sm':'text-xs'">{{ data.tags?.join(' ') }}・{{ data.date }}</p>
     </div>
-    <NuxtLink v-if="head && data.url" :href="`${data.url}`" target="_blank" class="w-fit p-2 px-3 rounded-full bg-accent shrink-0 transition-all hover:bg-primary hover:scale-105">
+    <NuxtLink v-if="head && data.url" :href="`${data.url}`" target="_blank" class="w-fit p-2 px-3 rounded-full bg-accent shrink-0 transition-all hover:bg-primary hover:scale-105" :class="hideButton?'hidden md:block':''">
       <p class="text-xs font-medium whitespace-nowrap text-white flex justify-center items-center">
         {{ $t('view_site') }}
         <Icon name="ep:top-right" size="0.825rem" class="translate-x-1" />
@@ -28,6 +28,10 @@ const {data} = defineProps({
   head: {
     type: Boolean,
     default: true,
+  },
+  hideButton: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>

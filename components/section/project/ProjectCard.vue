@@ -11,13 +11,13 @@
           <span class="text-2xl font-semibold">{{ $t(`project_${project.name}_title`) }}</span>
           <span class="text-base font-normal text-text/60 mt-2">{{ $t(`project_${project.name}_description`)
           }}</span>
-          <div class="w-full mt-6 flex justify-center gap-4">
-            <!-- <BaseButton :href="`browse/${project.name}`">
-              {{ $t('read_more') }}
-            </BaseButton> -->
+          <div class="w-full mt-6 flex flex-wrap justify-center gap-4">
+            <BaseButton :href="`browse/${project.name}`" >
+              <span class="whitespace-nowrap">{{ $t('read_more') }}</span>
+            </BaseButton>
             <BaseButton type="secondary" :href="project.link" target="_blank">
-              {{ $t('view_site') }}
-              <Icon name="ep:top-right" size="1.25rem" class="ml-1 translate-x-1" />
+              <span class="whitespace-nowrap">{{ $t('view_site') }}</span>
+              <Icon name="ep:top-right" size="1.25rem" class=" translate-x-1" />
             </BaseButton>
           </div>
         </h3>

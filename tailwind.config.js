@@ -23,7 +23,8 @@ export default {
         "navbar": "3rem",
       },
       boxShadow: {
-        "line": "2px 4px 4px 2px var(--tw-shadow-color)"
+        "line": "2px 4px 4px 2px var(--tw-shadow-color)",
+        "grow": "0px 0px 6px 0px var(--tw-shadow-color)",
       }
     },
   },

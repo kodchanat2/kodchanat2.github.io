@@ -178,6 +178,24 @@ pre {
     }
 }
 
+/* modal */
+.modal-enter-from, .modal-enter-from .modal-mask,
+.modal-leave-to, .modal-leave-to .modal-mask {
+  opacity: 0;
+}
+
+.modal-enter-from .modal-container,
+.modal-leave-to .modal-container {
+  -webkit-transform: translateY(50vh);
+  transform: translateY(50vh);
+}
+@media screen and (min-width: 768px) {
+  .modal-enter-from .modal-container,
+  .modal-leave-to .modal-container {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
 
 /* fade-in */
 .fade-enter-active,
