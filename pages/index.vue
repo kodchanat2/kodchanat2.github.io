@@ -41,16 +41,18 @@ onMounted(() => {
 onBeforeRouteLeave((to, from, next) => {
   // console.log(to, from);
   if(to.name.includes('browse-slug')) {
-    showModal(to)
+    if(modal.value) closeModal();
+    else showModal(to)
   }
   else next();
 })
 
 onBeforeRouteUpdate((to, from, next) => {
   if(modal.value) {
+    from.meta = {top: 1}
     modal.value = null;
   }
-  else next();
+  next();
 })
 
 const modalData = computed(() => browse.browse?.[locale.value]?.find(item => (item.key+'').toLowerCase() === (modal.value||'').toLowerCase()) || null, [locale.value, modal.value]);
@@ -63,7 +65,7 @@ const showModal = (to) => {
 }
 
 const closeModal = () => {
-  window.history.go(-1);
+  window.history.back();
 }
 
 </script>

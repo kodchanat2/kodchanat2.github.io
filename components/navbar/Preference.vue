@@ -57,10 +57,12 @@ defineProps({
 })
 const { locale, setLocale } = useI18n()
 const colorMode = useColorMode();
+const route = useRoute();
 
 const lang = useState('language', () => false);
 const toggleLang = () => {
   setLocale(locale.value !== 'en' ? 'en' : 'th')
+  route.meta.top = window.scrollY
 }
 watch(locale, () => {
   lang.value = locale.value !== 'en'
