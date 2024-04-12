@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-const { $const } = useNuxtApp();
+const { $const, $gsap } = useNuxtApp();
 const colorMode = useColorMode();
 const scroller = ref(null);
 
@@ -82,4 +82,20 @@ const next = () => {
 const prev = () => {
   scroller.value.scrollBy({ left: -300, behavior: 'smooth' });
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    $gsap.timeline({
+      scrollTrigger: {
+        trigger: scroller.value,
+        start: 'bottom bottom',
+        end: 'bottom center',
+        scrub: true,
+        // markers: true,
+        once: true,
+        onEnter: next,
+      }
+    })
+  }, 1);
+});
 </script>
