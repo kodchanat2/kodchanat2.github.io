@@ -4,8 +4,11 @@
     <div class="w-full h-px bg-text/20 mt-6 mb-2"></div>
     <div class="w-full p-4 flex flex-col gap-6 items-center font-light">
       <div v-for="(ctx,i) in content" :key="i" class="w-full">
-        <span v-if="!ctx.includes(':img:')" v-html="ctx" />
-        <img v-else :src="data.img" class="w-full max-w-lg mx-auto min-h-[200px] bg-secondary" />
+        <div v-if="ctx.img" class="w-full flex flex-col items-center">
+          <img :src="'/images/content/'+ctx.img" class="w-full max-w-lg min-h-[200px] bg-secondary" />
+          <span v-if="ctx.html" v-html="ctx.html" class="font-light text-xs italic text-text/80" />
+        </div>
+        <span v-else v-html="ctx.html" />
       </div>
     </div>
 
@@ -29,6 +32,12 @@ const {data} = defineProps({
 });
 
 const content = computed(() => {
-  return data?.content?.split('\n');
+  return data?.content?.split('\n').map((ctx) => {
+    if (!ctx.includes(':img:')) return { html: ctx };
+    else {
+      const [_, img, html] = ctx.split(':img:');
+      return { img , html: (html||'').trim()};
+    }
+  });
 });
 </script>
