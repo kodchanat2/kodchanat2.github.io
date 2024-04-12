@@ -27,11 +27,11 @@ const projects = [{
   "img": "lensod",
   "link": 'https://www.lensod.com/',
 },
-{
-  "name": "lensod_mc",
-  "img": "lensod_mc",
-  "link": 'https://www.lensod.com/browse/mc',
-},
+// {
+//   "name": "lensod_mc",
+//   "img": "lensod_mc",
+//   "link": 'https://www.lensod.com/browse/mc',
+// },
 {
   "name": "bff",
   "img": "bff",
