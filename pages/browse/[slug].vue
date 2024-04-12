@@ -15,7 +15,7 @@ definePageMeta({
 const $route = useRoute();
 const { t, locale } = useI18n();
 const browse = useBrowseStore();
-if(!browse.browse.th) await useAsyncData('page-data', browse.fetch);
+await useAsyncData('page-data', browse.fetch);
 
 // console.log($route.params.slug);
 // console.log(browse.browse);

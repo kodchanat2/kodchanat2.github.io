@@ -35,7 +35,7 @@ useHead({
 })
 
 onMounted(() => {
-  if(!browse.browse.th) browse.fetch();
+  browse.fetch();
 })
 
 onBeforeRouteLeave((to, from, next) => {

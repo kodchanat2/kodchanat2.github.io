@@ -34,4 +34,10 @@ const {data} = defineProps({
     default: false,
   },
 });
+
+import { useBrowseStore } from '~/stores/browseStore';
+const browse = useBrowseStore();
+onMounted(() => {
+  browse.fetch();
+});
 </script>
