@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full max-w-screen-md mx-auto flex flex-col">
+  <div class="w-full flex flex-col">
     <ContentHeader :data="data" class="px-4" :head="head" :hideButton="hideButton" />
     <div class="w-full h-px bg-text/20 mt-6 mb-2"></div>
     <div class="w-full p-4 flex flex-col gap-6 items-center font-light">
       <div v-for="(ctx,i) in content" :key="i" class="w-full">
         <div v-if="ctx.img" class="w-full flex flex-col items-center">
-          <img :src="'/images/content/'+ctx.img" class="w-full max-w-lg min-h-[200px] bg-secondary" />
+          <img :src="'/images/content/'+ctx.img" class="w-full max-w-lg min-h-[200px] bg-secondary shadow-grow shadow-secondary" />
           <span v-if="ctx.html" v-html="ctx.html" class="font-light text-xs italic text-text/80" />
         </div>
         <span v-else v-html="ctx.html" />
