@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex relative overflow-hidden justify-between items-center gap-2" :class="head?'flex-col md:flex-row':'flex-row'">
+  <div class="w-full flex relative justify-between items-center gap-2" :class="head?'flex-col md:flex-row':'flex-row'">
     <div class="w-full flex flex-col overflow-hidden" :class="head?'text-center md:text-left':''">
       <p class="font-medium" :class="head?'text-2xl':'text-lg truncate'">{{ data.title }}</p>
       <p class="font-normal text-text/60" :class="head?'text-base':'text-sm truncate'">{{ data.description }}</p>

@@ -1,6 +1,8 @@
 {
     "meta": {
         "title":"@:title {'|'} a web developer - Kodchanat Viskul profile",
+        "browse": "All works",
+        "browse_title": " {'|'} Kodchanat Viskul works",
         "description":"Check out my portfolio website! ▶︎ I am a web developer, able to design web UI and write API servers. → see my recently projects and experimental projects now!"
     },
 
@@ -57,7 +59,8 @@
     "project_popme_title": "Pop Me",
     "project_popme_description": "Balls matching game.",
 
-    "browse_title": "Browse",
+    "browse_title": "Works",
+    "browse_all": "see all works",
 
     "contact_title": "Contact me",
     "contact_description": "send a free message to me from this website. no registration required.",
