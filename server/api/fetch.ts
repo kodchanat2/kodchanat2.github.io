@@ -20,7 +20,7 @@ function normolizeData(data: any) {
     const url = properties.URL.url || undefined;
     const tags = properties.Tags.multi_select.length ? properties.Tags.multi_select.map((tag:any) => tag.name) : undefined;
     const content = properties.content.rich_text[0]?.plain_text;
-    const img = properties.img.files[0]?.file.url;
+    // const img = properties.img.files[0]?.file.url;
     const key = properties.key.title[0]?.plain_text;
     const date = properties.Date.date?.start || undefined;
     const id = result.id;
@@ -33,13 +33,13 @@ function normolizeData(data: any) {
       tags,
       date,
       content,
-      img,
+      // img,
       key,
       id,
       parent,
       show,
     }
-  }).filter((item:any) => item.key && item.show);
+  })
   return normolizedData;
 }
 // console.log(normolizeData(data));
@@ -75,9 +75,17 @@ function groupingData(normolizedData: any) {
     else acc.en[id] = data;
     return acc;
   }, {th:{...parentData}, en:{...parentData}});
-  groupedData.th = Object.values(groupedData.th).map((item:any) => ({...item, date: formatDate(item.date, true)}));
-  groupedData.en = Object.values(groupedData.en).map((item:any) => ({...item, date: formatDate(item.date)}));
-  return groupedData;
+
+  function finalizingData(data:any, th = false) {
+    return Object.values(data)
+      .filter((item:any) => item.key && item.show) // show only show
+      .sort((a:any, b:any) => new Date(b.date).getTime() - new Date(a.date).getTime()) // sort by date newest first
+      .map((item:any) => ({...item, date: formatDate(item.date, th)})) // format date
+  }
+  return {
+    th: finalizingData(groupedData.th, true),
+    en: finalizingData(groupedData.en),
+  }
 }
 
 // console.log(groupingData(normolizeData(data)));
