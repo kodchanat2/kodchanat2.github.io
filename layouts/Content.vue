@@ -9,9 +9,13 @@
 </template>
   
 <script setup>
-const head = useLocaleHead({ addDirAttribute: true, addSeoAttributes: true });
+import { useRouteStore } from '~/stores/routeStore';
+const route = useRouteStore();
 
+const head = useLocaleHead({ addDirAttribute: true, addSeoAttributes: true });
 useHead(head.value);
 
-
+onMounted(()=>{
+  route.setRoute('browse');
+})
 </script>

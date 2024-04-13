@@ -96,6 +96,6 @@ onMounted(() => {
         onEnter: next,
       }
     })
-  }, 1);
+  }, 5);
 });
 </script>

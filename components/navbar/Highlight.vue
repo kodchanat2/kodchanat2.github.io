@@ -6,9 +6,10 @@
     <div v-for="(item, index) in list" :key="item.name" :id="`nav-${item.name}`"
       class="w-full p-2 text-center relative text-lg font-normal transition delay-50"
       :class="route == item.name ? 'text-accent md:text-background font-semibold' : 'hidden md:block'">
-      <NuxtLink :to="localePath(item.page?item.to:{hash: item.to})" class="uppercase whitespace-nowrap">
+      <div class="pointer-events-none absolute top-0 left-0 w-full h-full scale-y-[0.85]" :class="isPage(item) ? 'border border-primary rounded-lg': ''"/>
+      <NuxtLink :to="localePath(item.page?item.to:{hash: item.to})" class="uppercase whitespace-nowrap group" :class="route == item.name ? '' : 'hover:text-accent'">
         {{ $t(item.name + '_title') }}
-        <!-- <Icon v-if="item.page" name="ep:right" /> -->
+        <Icon v-if="isPage(item)" name="ph:arrow-right-bold" class="-ml-1 -translate-y-px transition-transform group-hover:translate-x-1 duration-200"/>
       </NuxtLink>
     </div>
   </div>
@@ -30,6 +31,7 @@ const props = defineProps({
 })
 
 const list = computed(() => props.home ? $const.route_list : $const.route_list.filter(item => item.page))
+const isPage = (item) => (item.page&&(item.name!=='home' ^ !props.home))
 
 const setHighlightPosition = async () => {
   await nextTick();

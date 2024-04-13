@@ -16,11 +16,11 @@ const route_list = [
     name: 'contact',
     to: '#contact',
   },
-  // {
-  //   name: 'browse',
-  //   page: true,
-  //   to: '#'
-  // }
+  {
+    name: 'browse',
+    to: '/browse',
+    page: true
+  }
 ]
 
 export default route_list

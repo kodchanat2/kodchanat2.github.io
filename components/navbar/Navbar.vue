@@ -5,7 +5,7 @@
       <NuxtLink id="nav-title" :to="localePath('/')" class="text-2xl font-bold z-30 hover:text-accent" :class="home&&'translate-x-full opacity-0'">{{
         $t('title_short') }}</NuxtLink>
       <div class="hidden md:flex justify-between items-center">
-        <NavbarHighlight :home="home" class="nav-highlight" :class="home&&'opacity-0 -translate-x-4'" />
+        <NavbarHighlight :home="home" class="nav-highlight transition-opacity hover:!opacity-100" :class="home&&'opacity-0 -translate-x-4'" />
         <NavbarSetting />
       </div>
       <div class="md:hidden mr-1">

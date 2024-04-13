@@ -30,6 +30,7 @@ onMounted(() => {
     opacity: 1,
     y: 0,
   })
+  setRoute('home')
   setTimeout(() => {
     routeTrigger()
   }, 100);
@@ -37,7 +38,8 @@ onMounted(() => {
 
 function setRoute(route) {
   // console.log(route);
-  routeStore.setRoute(route)
+  if(!window.location.pathname.includes('/browse'))
+    routeStore.setRoute(route)
 }
 
 function routeTrigger() {

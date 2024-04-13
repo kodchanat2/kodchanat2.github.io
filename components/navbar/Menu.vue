@@ -1,7 +1,6 @@
 <template>
   <div class="relative">
-    <div class="group flex justify-between items-center z-30 relative cursor-pointer focus:outline-none"
-      :class="shown ? '' : ''" @click="toggleMenu">
+    <div class="group flex justify-between items-center z-30 relative cursor-pointer focus:outline-none" @click="toggleMenu()">
       <slot />
       <div class=" bg-secondary rounded-full p-1 transition-colors">
         <Icon :name="shown && !closing ? 'mdi:close-thick' : 'oi:menu'" aria-hidden="true"
@@ -11,7 +10,7 @@
     </div>
 
     <div v-if="shown" class="fixed top-0 left-0 w-screen h-screen-large bg-background/70 menu-mask"
-      :class="closing ? 'reverse' : ''" @click="toggleMenu"></div>
+      :class="closing ? 'reverse' : ''" @click="toggleMenu()"></div>
 
     <div class="fixed top-0 left-0 z-20 w-screen overflow-hidden" :class="[!shown && 'hidden']">
       <div
@@ -19,11 +18,11 @@
         :class="[closing && 'reverse']"></div>
       <div class="overflow-hidden mt-navbar relative py-4 fade-down-enter-active fade-down-animate"
         :class="[closing && 'fade-down-leave-active fade-down-leave-to']">
-        <div v-for="(item, index) in list" :key="item.name" class="w-full p-3 text-center text-xl font-semibold">
+        <div v-for="(item, index) in list" :key="item.name" class="w-full relative p-3 text-center text-xl font-semibold">
           <NuxtLink :to="localePath(item.page?item.to:{hash: item.to})" class="uppercase" :class="routeStore.route == item.name && 'text-primary'"
-            @click="toggleMenu">
+            @click="toggleMenu(isPage(item))">
             {{ $t(item.name + '_title') }}
-            <!-- <Icon v-if="item.page" name="ep:right" /> -->
+            <Icon v-if="isPage(item)" name="fa6-solid:arrow-right" class="-ml-7 -translate-y-px translate-x-8" />
           </NuxtLink>
         </div>
         <NavbarPreference class="mt-4" :menu="true" />
@@ -50,10 +49,14 @@ const shown = useState('show', () => false)
 const closing = useState('closing', () => false)
 let timer = null;
 
-const toggleMenu = () => {
+const toggleMenu = (change = false) => {
   if (!shown.value) {
     document.body.style.overflow = 'hidden';
     return shown.value = true;
+  }
+  if (change) {
+    document.body.style.overflow = 'auto';
+    return shown.value = false;
   }
 
   clearTimeout(timer);
@@ -66,5 +69,6 @@ const toggleMenu = () => {
 }
 
 const list = computed(() => props.home ? $const.route_list : $const.route_list.filter(item => item.page))
+const isPage = (item) => (item.page&&(item.name!=='home' ^ !props.home))
 
 </script>
