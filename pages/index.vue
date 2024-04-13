@@ -55,7 +55,7 @@ onBeforeRouteUpdate((to, from, next) => {
   next();
 })
 
-const modalData = computed(() => browse.browse?.[locale.value]?.find(item => (item.key+'').toLowerCase() === (modal.value||'').toLowerCase()) || null, [locale.value, modal.value]);
+const modalData = computed(() => browse.browse?.[locale.value]?.find(item => item.key === (modal.value||'').toLowerCase()) || null, [locale.value, modal.value]);
 
 const showModal = (to) => {
   // console.log(to);

@@ -47,7 +47,7 @@ function normolizeData(data: any) {
 function groupingData(normolizedData: any) {
   const parentData = normolizedData.reduce((acc:any, curr:any) => {
     if (!curr.parent) {
-      acc[curr.id] = curr;
+      acc[curr.id] = {...curr, key: (curr.key || '').toLowerCase()};
     }
     return acc;
   }, {});

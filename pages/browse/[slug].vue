@@ -26,7 +26,7 @@ await useAsyncData('page-data', browse.fetch);
 
 // console.log($route.params.slug);
 // console.log(browse.browse);
-const data = computed(() => browse.browse?.[locale.value]?.find(item => (item.key+'').toLowerCase() === ($route.params.slug||'').toLowerCase()) || null, [browse.browse, locale.value, $route.params.slug]);
+const data = computed(() => browse.browse?.[locale.value]?.find(item => item.key === ($route.params.slug||'').toLowerCase()) || null, [browse.browse, locale.value, $route.params.slug]);
 // console.log(data.value);
 
 
