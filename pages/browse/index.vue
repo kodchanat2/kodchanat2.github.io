@@ -1,9 +1,25 @@
 <template>
-  <div class="w-full max-w-screen-lg px-2 flex items-start gap-2">
-    <div class="w-64 hidden lg:flex shrink-0">
-      <ContentFilter />
+  <div class="w-full max-w-screen-lg lg:px-2 flex flex-col lg:flex-row items-start gap-2">
+    <ContentFilterModal :show="isShowFilter" @close="isShowFilter=false" />
+    <div class="w-full lg:w-64 flex flex-col gap-2 shrink-0 sticky top-navbar -translate-y-px pt-px z-10 bg-secondary/80 lg:bg-transparent backdrop-blur">
+      <ContentFilter class="hidden lg:flex mt-2" />
+      <div class="w-full flex items-center border-y lg:border-0 border-primary/20">
+        <div class="w-full flex items-center gap-2 p-2 overflow-x-scroll flex-nowrap lg:flex-wrap whitespace-nowrap scrollbar-hide scroll-smooth">
+          <div v-if="!filters.length" class="p-1 px-3 text-sm font-light lg:hidden">{{ t('all_browse') }}</div>
+          <div v-for="filter in filters" :key="filter.key" class="flex items-center text-primary px-3 p-1 rounded-full bg-background border border-primary/50">
+            <span class="text-sm capitalize">{{ filter.text }}</span>
+            <Icon name="mdi:close" class="cursor-pointer translate-x-1 transition-transform hover:scale-125" @click="closeFilter(filter)" />
+          </div>
+        </div>
+        <div class="shrink-0 w-fit h-full lg:hidden">
+          <div class="p-3 h-full flex items-center border-x border-primary/30 text-primary text-xl cursor-pointer bg-background" @click="isShowFilter=true">
+            <Icon name="mage:filter" />
+            <Icon :name="f.sortNewest?'fluent-mdl2:sort-up': 'fluent-mdl2:sort-down'" class="-ml-3 translate-x-2 scale-75" />
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="w-full bg-lime-40 grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
       <template v-if="all.length === 0">
         <div class="w-full h-64 bg-background flex items-center justify-center">
           <h1 class="text-2xl font-semibold">{{ t('page_not_found') }}</h1>
@@ -23,8 +39,10 @@ definePageMeta({
   layout: 'content',
 })
 const { t, locale } = useI18n();
+const { $const } = useNuxtApp();
 const browse = useBrowseStore();
 const f = useFilterStore();
+const isShowFilter = ref(false);
 await useAsyncData('page-data', browse.fetch);
 
 // console.log(browse.browse);
@@ -53,4 +71,23 @@ useHead({
 onMounted(() => {
   f.readQuery();
 });
+
+const filters = computed(() => {
+  const filters = [];
+  $const.tag.groups.forEach(group => {
+    if (f.groupSelected?.[group.key]?.all) filters.push( {text:t('filter_key_'+group.key), key: group.key, group: true})
+    else {
+      group.value.map(tag => {
+        if (f.selected[tag]) filters.push({text:t(`tag_${tag}`), key: tag, group: false});
+      });
+    }
+  });
+  return filters;
+}, [f.groupSelected, f.selected]);
+
+const closeFilter = (filter) => {
+  if (filter.group) f.toggleGroup(filter.key);
+  else f.toggleTag(filter.key);
+}
+
 </script>

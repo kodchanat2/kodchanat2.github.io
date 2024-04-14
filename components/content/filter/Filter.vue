@@ -9,13 +9,13 @@
         <Icon :name="f.sortNewest ? 'mdi:sort-clock-descending-outline' : 'mdi:sort-clock-ascending-outline'" class="text-xl transition group-hover:scale-110 group-hover:text-accent" />
       </div>
     </div>
-    <div class="w-fit flex flex-col gap-2 ml-8">
+    <div class="w-full flex flex-col gap-2 pl-8">
       <!-- checkbox -->
       <div v-for="group in filters" :key="group.key" class="w-full flex flex-col gap-1">
         <label class="flex items-center group gap-2 hover:font-medium cursor-pointer" @click="f.toggleGroup(group.key)">
           <Icon 
             :name="f.groupSelected[group.key]?.all ? 'mdi:checkbox-marked': f.groupSelected[group.key]?.some ? 'mdi:checkbox-indeterminate-outline' : 'mdi:checkbox-blank-outline'" 
-            class="text-primary transition group-hover:scale-110" 
+            class="text-primary text-xl transition group-hover:scale-110" 
           />
           <!-- <input type="checkbox" /> -->
           <span>{{ $t('filter_key_'+group.key) }}</span>
@@ -24,7 +24,7 @@
           <label class="flex items-center group gap-2 font-light hover:font-normal cursor-pointer" @click="f.toggleTag(tag)">
             <Icon 
               :name="f.selected[tag] ? 'mdi:checkbox-marked' : 'mdi:checkbox-blank-outline'" 
-              class="text-primary transition group-hover:scale-110" 
+              class="text-primary text-xl transition group-hover:scale-110" 
             />
             <!-- <input type="checkbox" /> -->
             <span>{{ $t('filter_key_'+tag) }}</span>
