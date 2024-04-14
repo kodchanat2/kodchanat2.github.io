@@ -19,13 +19,25 @@
         </div>
       </div>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
-      <template v-if="all.length === 0">
-        <div class="w-full h-64 bg-background flex items-center justify-center">
-          <h1 class="text-2xl font-semibold">{{ t('page_not_found') }}</h1>
+    <div class="w-full relative flex flex-col">
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+        <TransitionGroup
+          name="result"
+          @before-leave="animateBeforeLeave"
+        >
+          <ContentCard v-for="ctx in results" :key="ctx.key" :data="ctx" />
+        </TransitionGroup>
+      </div>
+      <Transition name="result">
+        <div v-if="results.length === 0" class="w-full pt-10 bg-background flex flex-col gap-4 items-center text-center justify-center">
+          <h3 class="text-2xl font-medium text-text/60">{{ t('no_browse') }}</h3>
+          <div class="w-fit p-2 px-4 rounded-full border-2 border-primary shrink-0 transition-all cursor-pointer hover:bg-secondary/60" @click="f.clearSelected">
+            <p class="text-base font-medium whitespace-nowrap text-primary flex justify-center items-center">
+              {{ $t('browse_all') }}
+            </p>
+          </div>
         </div>
-      </template>
-      <ContentCard v-for="(ctx,i) in all" :key="i" :data="ctx" />
+      </Transition>
     </div>
   </div>
 </template>
@@ -47,6 +59,12 @@ await useAsyncData('page-data', browse.fetch);
 
 // console.log(browse.browse);
 const all = computed(() => browse.browse?.[locale.value] || [], [browse.browse, locale.value]);
+const results = computed(() => {
+  let results = [];
+  if(Object.keys(f.selected).every(key => !f.selected[key])) results = [...all.value];
+  else results = all.value.filter(ctx => (ctx.tags || []).some(tag => f.selected[tag]));
+  return f.sortNewest ? results : results.reverse();
+}, [all, f.selected]);
 
 const title = ref(t('meta.browse') + t('meta.browse_title'));
 const description = ref(t('meta.description'));
@@ -90,4 +108,10 @@ const closeFilter = (filter) => {
   else f.toggleTag(filter.key);
 }
 
+const animateBeforeLeave = (el) => {
+  el.style.width = el.offsetWidth + 'px';
+  el.style.height = el.offsetHeight + 'px';
+  el.style.top = el.offsetTop + 'px';
+  el.style.left = el.offsetLeft + 'px';
+}
 </script>

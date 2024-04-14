@@ -39,6 +39,7 @@ export const useFilterStore = defineStore('filter', () => {
         Object.keys(selected).forEach(tag => {
             selected[tag] = false;
         });
+        sortNewest.value = true;
         updateQuery();
     }
 

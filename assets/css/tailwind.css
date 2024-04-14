@@ -244,3 +244,23 @@ pre {
     opacity: 0;
     transform: translateY(-1rem);
 }
+
+/* result transition */
+.result-move,
+.result-enter-active,
+.result-leave-active {
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.result-enter-from,
+.result-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.result-leave-active {
+  position: absolute;
+  z-index: 1;
+  @apply blur-sm;
+}

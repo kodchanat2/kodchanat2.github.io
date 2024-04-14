@@ -62,6 +62,7 @@
     "browse_title": "ผลงาน",
     "browse_all": "ดูผลงานทั้งหมด",
     "all_browse": "กำลังแสดงผลงานทั้งหมด",
+    "no_browse": "ไม่พบผลงานที่ตรงกับตัวกรอง",
     "filter": "ตัวกรอง",
     "filter_key_project": "โปรเจกต์",
     "filter_key_project_publish": "สาธารณะ",
