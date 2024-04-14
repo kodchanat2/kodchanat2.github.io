@@ -1,6 +1,8 @@
 <template>
   <div class="w-full max-w-screen-lg px-2 flex items-start gap-2">
-    <div class="w-64 h-full min-h-full bg-red-400 hidden md:flex"></div>
+    <div class="w-64 hidden lg:flex shrink-0">
+      <ContentFilter />
+    </div>
     <div class="w-full bg-lime-40 grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
       <template v-if="all.length === 0">
         <div class="w-full h-64 bg-background flex items-center justify-center">
@@ -14,13 +16,15 @@
 
 <script setup>
 import { useBrowseStore } from '~/stores/browseStore';
+import { useFilterStore } from '~/stores/filterStore';
 import ContentCard from '../../components/content/ContentCard.vue';
+import { onMounted } from 'vue';
 definePageMeta({
   layout: 'content',
 })
-const $route = useRoute();
 const { t, locale } = useI18n();
 const browse = useBrowseStore();
+const f = useFilterStore();
 await useAsyncData('page-data', browse.fetch);
 
 // console.log(browse.browse);
@@ -45,4 +49,8 @@ useHead({
     {name: 'twitter:description', content: description},
   ]
 })
+
+onMounted(() => {
+  f.readQuery();
+});
 </script>
