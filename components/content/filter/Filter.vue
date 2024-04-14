@@ -3,7 +3,7 @@
     <div class="mb-2 w-full text-center relative">
       <p class="text-lg font-medium">{{ $t('filter') }}</p>
       <div 
-        class="absolute right-0 top-1/2 -translate-y-1/2 p-2 py-1 rounded-md w-fit border border-primary/40 cursor-pointer hover:bg-background group"
+        class="absolute right-0 top-1/2 -translate-y-1/2 p-2 py-1 rounded-md w-fit border border-primary/30 cursor-pointer hover:bg-background group"
         @click="f.toggleSort"
       >
         <Icon :name="f.sortNewest ? 'mdi:sort-clock-descending-outline' : 'mdi:sort-clock-ascending-outline'" class="text-xl transition group-hover:scale-110 group-hover:text-accent" />

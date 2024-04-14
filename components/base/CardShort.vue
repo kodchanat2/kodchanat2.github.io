@@ -11,8 +11,8 @@
           <p class="text-sm font-normal text-text/60 truncate">{{ $t(`project_${name}_description`) }}</p>
         </div>
       </div>
-      <NuxtLink :href="`${baseLink}/${name}`" target="_blank" class="w-fit z-10 p-2 px-3 rounded-full bg-accent shrink-0 transition-all hover:bg-primary hover:scale-105">
-        <p class="text-xs font-medium whitespace-nowrap text-white flex justify-center items-center">
+      <NuxtLink :href="`${baseLink}/${name}`" target="_blank" class="w-fit z-10 p-2 px-3 rounded-full bg-primary shrink-0 transition-all hover:scale-105 hover:bg-accent">
+        <p class="text-xs font-medium whitespace-nowrap text-background flex justify-center items-center">
           {{ $t('view_site') }}
           <Icon name="ep:top-right" size="0.825rem" class="translate-x-1" />
         </p>
