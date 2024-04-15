@@ -32,7 +32,7 @@
         </TransitionGroup>
       </div>
 
-      <BaseLink :to="localePath('/browse?filter=award')" class="mx-auto -mt-10 z-10">{{ $t('link_award') }} →</BaseLink>
+      <BaseLink :to="localePath('/browse?filter=award')" class="ml-auto md:mx-auto px-4 -mt-10 z-10">{{ $t('link_award') }} →</BaseLink>
     </div>
   </div>
 </template>

@@ -92,7 +92,7 @@ onMounted(() => {
         end: 'bottom center',
         scrub: true,
         // markers: true,
-        // once: true,
+        once: true,
         onEnter: next,
       }
     })
