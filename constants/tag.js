@@ -7,11 +7,11 @@ const tags = {
 }
 const groups = [
   { 
-    key: 'award',
-    value: ['award_coding','award_other']
-  },{ 
     key: 'project',
     value: ['project_publish','project_experimental','project_competition']
+  },{ 
+    key: 'award',
+    value: ['award_coding','award_other']
   },
 ]
 
