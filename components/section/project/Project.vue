@@ -2,6 +2,7 @@
   <div id="project" class="w-full py-8 mt-navbar">
     <div class="w-full max-w-screen-lg mx-auto px-2 flex flex-col justify-center items-center">
       <h2 class="my-4 text-5xl px-4 font-semibold uppercase">{{ $t('project_title') }}</h2>
+      <p class="mb-4 text-base font-normal text-text/60 text-center">{{ $t('project_description') }}</p>
 
       <SectionProjectCard v-for="(project, index) in projects" :key="index" :project="project" :swap="index % 2 == 1" />
 
