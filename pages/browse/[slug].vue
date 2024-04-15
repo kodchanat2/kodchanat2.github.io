@@ -20,7 +20,7 @@ definePageMeta({
 })
 const $route = useRoute();
 const { t, locale } = useI18n();
-const config = UseRuntimeConfig().public;
+const config = useRuntimeConfig().public;
 const browse = useBrowseStore();
 await useAsyncData('page-data', browse.fetch);
 

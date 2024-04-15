@@ -77,10 +77,10 @@ function sortByLevel(array) {
 }
 
 const next = () => {
-  scroller.value.scrollBy({ left: 300, behavior: 'smooth' });
+  scroller.value?.scrollBy({ left: 300, behavior: 'smooth' });
 }
 const prev = () => {
-  scroller.value.scrollBy({ left: -300, behavior: 'smooth' });
+  scroller.value?.scrollBy({ left: -300, behavior: 'smooth' });
 }
 
 onMounted(() => {
@@ -92,7 +92,7 @@ onMounted(() => {
         end: 'bottom center',
         scrub: true,
         // markers: true,
-        once: true,
+        // once: true,
         onEnter: next,
       }
     })
