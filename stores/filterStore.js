@@ -35,12 +35,12 @@ export const useFilterStore = defineStore('filter', () => {
         updateQuery();
     }
 
-    const clearSelected = () => {
+    const clearSelected = (update=true) => {
         Object.keys(selected).forEach(tag => {
             selected[tag] = false;
         });
         sortNewest.value = true;
-        updateQuery();
+        if (update) updateQuery();
     }
 
     const updateQuery = () => {
@@ -61,6 +61,7 @@ export const useFilterStore = defineStore('filter', () => {
     }
     
     const readQuery = () => {
+        clearSelected(false);
         const {filter, sort} = $router.currentRoute.value.query;
         if (filter) {
             filter.split(',').forEach(abbr => {

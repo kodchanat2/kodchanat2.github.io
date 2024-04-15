@@ -40,10 +40,7 @@ onMounted(() => {
 
 onBeforeRouteLeave((to, from, next) => {
   // console.log(to, from);
-  if(to.name.includes('browse-slug')) {
-    if(modal.value) closeModal();
-    else showModal(to)
-  }
+  if(to.name.includes('browse-slug') && to.hash) showModal(to)
   else next();
 })
 
@@ -61,7 +58,7 @@ const showModal = (to) => {
   // console.log(to);
   modal.value = to.params.slug;
   // console.log(locale.value==='th' ? 'th' : '');
-  window.history.pushState({}, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
+  window.history.pushState(window.history.state, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
 }
 
 const closeModal = () => {

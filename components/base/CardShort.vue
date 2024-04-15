@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex relative">
-    <NuxtLink :href="'browse/'+name" class="w-[calc(100%+1rem)] h-full -left-2 absolute rounded-xl hover:bg-primary/20 transition-colors duration-300"></NuxtLink>
+    <NuxtLink :href="'/browse/'+name+'#'" class="w-[calc(100%+1rem)] h-full -left-2 absolute rounded-xl hover:bg-primary/20 transition-colors duration-300"></NuxtLink>
     <div class="w-14 shrink-0 my-4 mr-2">
       <img :src="`${baseLink}/${name}/favicon.ico`" class="w-full" :alt="`${name}-icon`" />
     </div>

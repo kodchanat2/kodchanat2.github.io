@@ -1,6 +1,7 @@
 <template>
   <div class="w-full max-w-screen-lg lg:px-2 flex flex-col lg:flex-row items-start gap-2">
     <ContentFilterModal :show="isShowFilter" @close="isShowFilter=false" />
+    <ContentModal :show="!!modalData" :data="modalData" @close="closeModal" />
     <div class="w-full lg:w-64 flex flex-col gap-2 shrink-0 sticky top-navbar -translate-y-px pt-px z-10 bg-secondary/80 lg:bg-transparent backdrop-blur">
       <ContentFilter class="hidden lg:flex mt-2" />
       <div class="w-full flex items-center border-y lg:border-0 border-primary/20">
@@ -54,6 +55,7 @@ const { t, locale } = useI18n();
 const { $const } = useNuxtApp();
 const browse = useBrowseStore();
 const f = useFilterStore();
+const modal = ref(null);
 const isShowFilter = ref(false);
 await useAsyncData('page-data', browse.fetch);
 
@@ -113,5 +115,30 @@ const animateBeforeLeave = (el) => {
   el.style.height = el.offsetHeight + 'px';
   el.style.top = el.offsetTop + 'px';
   el.style.left = el.offsetLeft + 'px';
+}
+
+onBeforeRouteLeave((to, from, next) => {
+  // console.log(to, from);
+  if(to.name.includes('browse-slug') && to.hash) showModal(to)
+  else next();
+})
+
+onBeforeRouteUpdate((to, from, next) => {
+  if(modal.value) {
+    from.meta = {top: 1}
+    modal.value = null;
+  }
+  next();
+})
+
+const modalData = computed(() => browse.browse?.[locale.value]?.find(item => item.key === (modal.value||'').toLowerCase()) || null, [locale.value, modal.value]);
+
+const showModal = (to) => {
+  modal.value = to.params.slug;
+  window.history.pushState(window.history.state, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
+}
+
+const closeModal = () => {
+  window.history.back();
 }
 </script>

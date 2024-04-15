@@ -12,7 +12,7 @@
           <span class="text-base font-normal text-text/60 mt-2">{{ $t(`project_${project.name}_description`)
           }}</span>
           <div class="w-full mt-6 flex flex-wrap justify-center gap-4">
-            <BaseButton :href="`browse/${project.name}`" >
+            <BaseButton :href="`/browse/${project.name}#`" >
               <span class="whitespace-nowrap">{{ $t('read_more') }}</span>
             </BaseButton>
             <BaseButton type="secondary" :href="project.link" target="_blank">
