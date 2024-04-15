@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <!-- <BaseLink to="#" class="mt-4 p-4">{{ $t('link_project') }} →</BaseLink> -->
+      <BaseLink :to="localePath('/browse?filter=project')" class="mt-4 p-4">{{ $t('link_project') }} →</BaseLink>
     </div>
   </div>
 </template>
