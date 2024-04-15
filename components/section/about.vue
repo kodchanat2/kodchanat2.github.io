@@ -24,7 +24,15 @@
         </i18n-t>
       </h3>
 
-      <!-- <BaseLink to="#" class="mt-4 ml-auto p-4">{{ $t('link_award') }} →</BaseLink> -->
+      <div class="w-full py-16 flex gap-4 relative overflow-x-scroll scroll-smooth scrollbar-hide">
+        <TransitionGroup name="slide" @after-leave="slideTrigger">
+          <div v-for="logo in logos" :key="logo" class="w-16 h-16 shrink-0">
+            <img :src="`/images/awards/${logo.replaceAll('#','')}.webp`" :alt="logo.replaceAll('#','')" class="transition-all duration-300 md:grayscale hover:grayscale-0 hover:scale-110" />
+          </div>
+        </TransitionGroup>
+      </div>
+
+      <BaseLink :to="localePath('/browse?filter=award')" class="mx-auto -mt-10 z-10">{{ $t('link_award') }} →</BaseLink>
     </div>
   </div>
 </template>
@@ -34,4 +42,29 @@ const dayjs = useDayjs();
 const workDate = useDayjs('2018-12-13');
 const expDate = useDayjs('2012-07-28');
 
+const _logos = [
+  'toi',
+  'posn',
+  'ipst',
+  'acm',
+  'sipa',
+  'nsc',
+  'nectec',
+  'itpe',
+  'nstda',
+  'startup',
+  'kidbright',
+  'nstda#',
+]
+const logos = ref([..._logos]);
+const tempLogo = ref(null);
+
+const slideTrigger = ()=> {
+  if(tempLogo.value) logos.value.push(tempLogo.value);
+  tempLogo.value = logos.value.shift();
+}
+
+onMounted(() => {
+  slideTrigger();
+})
 </script>

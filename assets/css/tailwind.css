@@ -261,6 +261,29 @@ pre {
 
 .result-leave-active {
   position: absolute;
-  z-index: 1;
   @apply blur-sm;
+}
+
+/* slide transition */
+.slide-move,
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 5s linear;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+    opacity: 0;
+}
+
+.slide-leave-to {
+    transform: translateX(-100%);
+}
+
+.slide-enter-from{
+    transform: translateX(100%);
+}
+
+.slide-leave-active {
+  position: absolute;
 }
