@@ -49,7 +49,10 @@ useHead({
     {name: 'og:description', content: description},
     {name: 'twitter:title', content: title},
     {name: 'twitter:description', content: description},
-    {name: 'og:image', content: config.base_url + img.value}
   ]
+})
+
+useSeoMeta({
+  ogImage: config.base_url + img.value,
 })
 </script>
