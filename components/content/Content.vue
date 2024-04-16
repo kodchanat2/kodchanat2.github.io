@@ -34,7 +34,7 @@ const imgUrl = useRuntimeConfig().public.img_url || '';
 
 const content = computed(() => {
   return data?.content?.split('\n').map((ctx) => {
-    if (!ctx.includes(':img:')) return { html: ctx };
+    if (!ctx.includes(':img:')) return { html: '  '+ctx };
     else {
       const [_, img, html] = ctx.split(':img:');
       return { img , html: (html||'').trim()};
