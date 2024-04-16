@@ -27,7 +27,7 @@
       <div class="w-full py-16 flex gap-4 relative overflow-x-scroll scroll-smooth scrollbar-hide">
         <TransitionGroup name="slide" @after-leave="slideTrigger">
           <div v-for="logo in logos" :key="logo" class="w-16 h-16 shrink-0">
-            <img :src="`/images/awards/${logo.replaceAll('#','')}.webp`" :alt="logo.replaceAll('#','')" class="transition-all duration-300 md:grayscale hover:grayscale-0 hover:scale-110" />
+            <img :src="`${imgUrl}/images/awards/${logo.replaceAll('#','')}.webp`" :alt="logo.replaceAll('#','')" class="transition-all duration-300 md:grayscale hover:grayscale-0 hover:scale-110" />
           </div>
         </TransitionGroup>
       </div>
@@ -41,6 +41,7 @@
 const dayjs = useDayjs();
 const workDate = useDayjs('2018-12-13');
 const expDate = useDayjs('2012-07-28');
+const imgUrl = useRuntimeConfig().public.img_url || '';
 
 const _logos = [
   'toi',
