@@ -18,7 +18,7 @@
                 <div class="w-full px-0 flex" v-for="item in sortByLevel(skill.list)" :key="item.name">
                   <p class="w-full">
                     <Icon
-                      :name="item.icon || `skill-icons:${item.alt}${item.mono ? '' : ('-' + (colorMode.value !== 'light' ? 'dark' : 'light'))}`"
+                      :name="item.icon || `skill-icons:${item.alt}${item.mono ? '' : ('-' + (!isLightColor ? 'dark' : 'light'))}`"
                       class="mr-2 mb-1" size="1.2rem" :style="[item.fill && `color:${item.fill}`]" />
                     <span class="text-lg font-normal">{{ item.name }}</span>
                     <span v-if="item.level" class="text-sm self-center" :class="styleByLevel(item.level)">
@@ -52,6 +52,8 @@ const colorMode = useColorMode();
 const scroller = ref(null);
 
 const skills = $const.skills;
+const isLightColor = computed(()=> colorMode.preference === 'light' || (colorMode.preference === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches))
+
 
 
 function styleByLevel(level) {
