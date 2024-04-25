@@ -61,7 +61,7 @@ const skills = [
       { name: 'yarn', icon: 'devicon:yarn', level: level.a },
       { name: 'Git', alt: 'git', mono:true, level: level.a },
       { name: 'Node.js', alt: 'nodejs', level: level.i },
-      { name: 'Adobe Photoshop', alt: 'photoshop', mono:true, level: level.i },
+      { name: 'Photoshop', alt: 'photoshop', mono:true, level: level.i },
       { name: 'Android Studio', alt: 'androidstudio', level: level.l, date: '2016' },
       { name: 'Unity3D', alt: 'unity', level: level.l, date: '2019' },
       { name: 'LINE API', icon: 'mingcute:line-app-fill', fill: '#57BE60', level: level.l, date: '2019' },
@@ -75,10 +75,12 @@ const skills = [
     title: 'skill_soft',
     description: '',
     list: [
-      { name: 'Web design', icon: 'iconoir:design-nib', },
+      { name: 'Web design', icon: 'iconoir:frame-select', },
       { name: 'Adaptability', icon: 'iconoir:people-tag', },
       { name: 'Creativity', icon: 'iconoir:light-bulb-on' },
-      { name: 'Public speaking', icon:'iconoir:emoji-talking-happy'},
+      { name: 'Problem-solving', icon: 'iconoir:security-pass' },
+      { name: 'Critical thinking', icon: 'iconoir:learning' },
+      { name: 'Public speaking', icon:'iconoir:microphone-speaking'},
       // { name: 'Events management' },
     ]
   },
