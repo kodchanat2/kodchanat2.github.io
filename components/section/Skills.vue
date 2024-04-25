@@ -52,7 +52,7 @@ const colorMode = useColorMode();
 const scroller = ref(null);
 
 const skills = $const.skills;
-const isLightColor = computed(()=> colorMode.preference === 'light' || (colorMode.preference === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches))
+const isLightColor = computed(()=> colorMode.preference === 'light' || (colorMode.preference === 'system' && window?.matchMedia('(prefers-color-scheme: light)').matches))
 
 
 
