@@ -1,15 +1,16 @@
 <template>
-  <div v-if="data" class="w-full max-w-screen-lg mx-auto flex flex-col items-center">
-    <div class="w-full flex items-center justify-between border-b border-text/25 -translate-y-6">
+  <div class="w-full max-w-screen-lg mx-auto flex flex-col items-center">
+    <div class="w-full flex items-center justify-between border-b border-text/25 -translate-y-6 mb-4">
       <NuxtLink :to="localePath('/browse')" class="flex items-center gap-1 cursor-pointer py-2 text-primary transition-colors group hover:text-accent">
         <Icon name="mdi:chevron-left" class="w-8 h-8 translate-x-1 transition-transform group-hover:translate-x-0 duration-300" />
         <p class="text-lg font-medium">{{ $t('browse_all') }}</p>
       </NuxtLink>
     </div>
-    <Content :data="data" />
-  </div>
-  <div v-else class="w-full mt-4 flex justify-center items-center">
-    <h1 class="text-2xl font-semibold">{{ $t('page_not_found') }}</h1>
+    <Content v-if="data" :data="data" />
+    <div v-else class="w-full mt-4 flex justify-center items-center">
+      <h1 class="text-2xl font-semibold">{{ $t('page_not_found') }}</h1>
+    </div>
+    <!-- <div class="w-full flex items-center justify-between border-t border-text/25"> -->
   </div>
 </template>
 

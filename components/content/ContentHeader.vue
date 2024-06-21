@@ -11,7 +11,7 @@
         <Icon name="ep:top-right" size="0.825rem" class="translate-x-1" />
       </p>
     </NuxtLink>
-    <NuxtLink v-else-if="!head" :href="localePath('/browse/'+data.key)" class="z-10 w-fit p-2 px-3 rounded-full bg-primary shrink-0 transition-all hover:bg-accent hover:scale-105">
+    <NuxtLink v-else-if="!head" :href="localePath('/browse/'+data.key)" class="z-[2] w-fit p-2 px-3 rounded-full bg-primary shrink-0 transition-all hover:bg-accent hover:scale-105">
       <p class="text-xs font-medium whitespace-nowrap text-background flex justify-center items-center">
         {{ $t('read_more') }}
       </p>

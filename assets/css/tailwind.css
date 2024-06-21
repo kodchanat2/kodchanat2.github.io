@@ -287,3 +287,10 @@ pre {
 .slide-leave-active {
   position: absolute;
 }
+
+.content-style span>a {
+    @apply text-primary underline hover:text-accent;
+}
+.content-style span>b {
+    @apply font-semibold;
+}
