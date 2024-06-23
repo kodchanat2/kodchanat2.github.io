@@ -45,7 +45,10 @@ export default defineNuxtConfig({
     'nuxt-icon',
     ['@nuxtjs/google-fonts', {
       download: false,
-      families: { 'Prompt': [200, 300, 400, 500, 600, 700], },
+      families: { 
+        'Prompt': [200, 300, 400, 500, 600, 700],
+        'Sarabun': [200, 300, 400, 500, 600, 700],
+      },
     }],
     'dayjs-nuxt',
     '@hypernym/nuxt-gsap',

@@ -31,6 +31,9 @@ body {
 pre {
     font-family: 'Prompt', sans-serif;
 }
+.content-style {
+    font-family: "Sarabun", sans-serif;
+}
 
 
 /* For iphone svg status bar */
