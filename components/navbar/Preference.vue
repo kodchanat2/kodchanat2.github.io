@@ -62,7 +62,7 @@ const route = useRoute();
 const lang = useState('language', () => false);
 const toggleLang = () => {
   setLocale(locale.value !== 'en' ? 'en' : 'th')
-  route.meta.top = window.scrollY
+  route.meta.top = window?.scrollY
 }
 watch(locale, () => {
   lang.value = locale.value !== 'en'
@@ -77,7 +77,7 @@ const toggleTheme = () => {
 
 onMounted(() => {
   lang.value = locale.value !== 'en';
-  theme.value = colorMode.preference === 'light' || (colorMode.preference === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches);
+  theme.value = colorMode.preference === 'light' || (colorMode.preference === 'system' && window?.matchMedia('(prefers-color-scheme: light)').matches);
 })
 
 </script>
