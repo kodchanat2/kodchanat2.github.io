@@ -58,7 +58,7 @@ const showModal = (to) => {
   // console.log(to);
   modal.value = to.params.slug;
   // console.log(locale.value==='th' ? 'th' : '');
-  window.history.pushState(window.history.state, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
+  window?.history.pushState(window.history.state, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
 }
 
 const closeModal = () => {

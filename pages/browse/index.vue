@@ -135,10 +135,10 @@ const modalData = computed(() => browse.browse?.[locale.value]?.find(item => ite
 
 const showModal = (to) => {
   modal.value = to.params.slug;
-  window.history.pushState(window.history.state, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
+  window?.history.pushState(window.history.state, '', (locale.value==='th' ? '/th/' : '/')+`browse/${to.params.slug}`);
 }
 
 const closeModal = () => {
-  window.history.back();
+  window?.history.back();
 }
 </script>

@@ -38,7 +38,7 @@ onMounted(() => {
 
 function setRoute(route) {
   // console.log(route);
-  if(!window.location.pathname.includes('/browse'))
+  if(!window?.location.pathname.includes('/browse'))
     routeStore.setRoute(route)
 }
 
