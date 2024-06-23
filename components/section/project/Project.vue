@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <BaseLink :to="localePath('/browse?filter=project')" class="mt-4 p-4">{{ $t('link_project') }} →</BaseLink>
+      <BaseLink :to="localePath('/browse?filter=project')" class="mt-4 p-4 text-text">{{ $t('link_project') }} →</BaseLink>
     </div>
   </div>
 </template>
@@ -37,6 +37,11 @@ const projects = [{
   "name": "bff",
   "img": "bff",
   "link": "https://bff-whal-dolph.web.app",
+},
+{
+  "name": "lp_wedding",
+  "img": "lp_wedding",
+  "link": "https://lalana-patiphan.vercel.app",
 }]
 
 const projectsExp = [
