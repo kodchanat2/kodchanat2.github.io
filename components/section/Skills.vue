@@ -52,7 +52,12 @@ const colorMode = useColorMode();
 const scroller = ref(null);
 
 const skills = $const.skills;
-const isLightColor = computed(()=> colorMode.preference === 'light' || (colorMode.preference === 'system' && window?.matchMedia('(prefers-color-scheme: light)').matches))
+const windowRef = ref(null);
+const isLightColor = computed(()=> {
+  const matchPref = windowRef.value?.matchMedia('(prefers-color-scheme: light)').matches;
+  return colorMode.preference === 'light' || (colorMode.preference === 'system' && matchPref)
+})
+
 
 
 
@@ -98,6 +103,7 @@ onMounted(() => {
         onEnter: next,
       }
     })
+    windowRef.value = window;
   }, 5);
 });
 </script>
