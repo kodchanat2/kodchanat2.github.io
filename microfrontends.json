@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "portfolio": {
+      "development": {
+        "fallback": "john-vis.vercel.app"
+      }
+    },
+    "block-match": {
+      "routing": [
+        {
+          "paths": ["/block-match"]
+        }
+      ]
+    }
+  }
+}
